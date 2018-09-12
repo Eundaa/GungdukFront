@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style type="text/css">
+        input{
+            width: 92.5vw;
+            height: 2.85vh;
+            border: none;
+        }
+    </style>
+    <title>userInfo</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class = "header">
+        <!-- png -->
+        <img src="img/ic-back.png"
+             srcset="img/ic-back@2x.png 2x,
+             img/ic-back@3x.png 3x"
+             layout="responsive"
+             class="ic_back">
+        <span class="header_title">회원 정보 수정</span>
+    </div>
+    <div class="content">
+        <form>
+            <div class="rec1_form">
+                <div class="rec1_title_form">ID</div>
+                <div class="rec1_box_form"><input type="text" name="id"></div>
+                <div class="rec1_line_form" id="line_id_userInfo"></div>
+            </div>
+            <div class="rec1_form">
+                <div class="rec1_title_form">비밀번호</div>
+                <div class="rec1_box_form"><input type="password" name="password"></div>
+                <div class="rec1_line_form" id="line_pw_userInfo"></div>
+            </div>
+            <div class="rec1_form">
+                <div class="rec1_title_form">비밀번호 확인</div>
+                <div class="rec1_box_form"><input type="password" name="passwordCheck"></div>
+                <div class="rec1_line_form" id="line_pwC_userInfo"></div>
+            </div>
+            <div class="rec2_form">
+                비밀번호가 일치하지 않습니다.
+            </div>
+            <div class="rec1_form">
+                <div class="rec1_title_form">핸드폰 번호</div>
+                <div class="rec1_box_form"> <input type="text" name="phoneNum"/> </div>
+                <div class="rec1_line_form" id="line_num_userInfo"></div>
+            </div>
+        </form>
+        <div class="btn_form_userInfo">
+            <span class="btn_text_form">수정</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

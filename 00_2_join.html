@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        /*.Rectangle-5 > p{*/
+            /*font-family: AppleSDGothicNeo;*/
+            /*font-size: 0.625em;*/
+            /*font-weight: normal;*/
+            /*font-style: normal;*/
+            /*font-stretch: normal;*/
+            /*line-height: 1.2;*/
+            /*letter-spacing: normal;*/
+            /*color: #ff001f;*/
+        /*}*/
+        input{
+            width: 92.5vw;
+            height: 2.85vh;
+            border: none;
+        }
+        input::placeholder{
+            font-family: AppleSDGothicNeo;
+            font-size: 0.875em;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.14;
+            letter-spacing: normal;
+            color: #e4e4e4;
+        }
+    </style>
+    <title>join</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class = "header">
+        <!-- png -->
+        <img src="img/ic-back.png"
+             srcset="img/ic-back@2x.png 2x,
+             img/ic-back@3x.png 3x"
+             layout="responsive"
+             class="ic_back">
+        <span class="header_title">회원 가입</span>
+    </div>
+    <div class="content">
+        <form>
+            <div class="rec1_form">
+                <div class="rec1_title_form">ID</div>
+                <div class="rec1_box_form"><input type="text" name="id" placeholder="아이디를 입력해주세요."></div>
+                <div class="rec1_line_form" id="line_id_join"></div>
+            </div>
+            <div class="rec1_form">
+                <div class="rec1_title_form">비밀번호</div>
+                <div class="rec1_box_form"><input type="password" name="pw" placeholder="비밀번호를 입력해주세요."></div>
+                <div class="rec1_line_form" id="line_pw_join"></div>
+            </div>
+            <div class="rec1_form">
+                <div class="rec1_title_form">비밀번호 확인</div>
+                <div class="rec1_box_form"><input type="password" name="pwCheck" placeholder="비밀번호를 다시 입력해주세요."></div>
+                <div class="rec1_line_form" id="line_pwC_join"></div>
+            </div>
+            <div class="rec2_form">
+                비밀번호가 일치하지 않습니다.
+            </div>
+            <div class="rec1_form">
+                <div class="rec1_title_form">핸드폰 번호</div>
+                <div class="rec1_box_form"> <input type="text" name="phoneNum" placeholder="핸드폰 번호를 입력해주세요."/> </div>
+                <div class="rec1_line_form" id="line_num_join"></div>
+            </div>
+            <div class="rec1_form">
+                <div class="rec1_title_form">이메일 주소</div>
+                <div class="rec1_box_form"> <input type="email" name="email" placeholder="이메일 주소를 입력해주세요."/> </div>
+                <div class="rec1_line_form" id="line_email_join"></div>
+            </div>
+        </form>
+        <div class="rec3_join">
+            <p>사용 가능한 ID 입니다.</p>
+        </div>
+        <div class="btn_form_join">
+            <span class="btn_text_form">가입하기</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
