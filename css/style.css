@@ -299,13 +299,12 @@ a{
 
 /*02_1_uesrInfo*/
 
-.rec1_form{
+.rec_form{
     width: 92.5vw;
-    height: 10vh;
-    margin-top: 2.14vh;
+    height: 13.57vh;
     margin-left: 3.75vw;
 }
-.rec1_title_form{
+.title_form{
     width: 92.5vw;
     height: 2.85vh;
     font-family: AppleSDGothicNeo;
@@ -316,9 +315,9 @@ a{
     line-height: 1.6;
     letter-spacing: normal;
     color: #5f9ea0;
-    margin-top: 1.6vh;
+    padding-top: 1.6vh;
 }
-.rec1_box_form{
+.box_form{
     width: 92.5vw;
     height: 2.85vh;
     margin-top: 1.42vh  ;
@@ -331,15 +330,16 @@ a{
     letter-spacing: normal;
     color: rgba(0, 0, 0, 0.87);
 }
-.rec1_line_form{
+.line_form{
     width: 92.5vw;
     height: 0.17vh;
     margin-top: 0.71vh;
     background-color: #e4e4e4;
 }
-.rec2_form{
+.alert_form{
     width: 92.5vw;
     height: 2.14vh;
+    margin-top: 0.71vh;
     font-family: AppleSDGothicNeo;
     font-size: 0.625em;
     font-weight: bolder;
@@ -348,14 +348,18 @@ a{
     line-height: 1.2;
     letter-spacing: normal;
     color: #ff001f;
-    margin-left: 3.75vw;
 }
-.btn_form_userInfo{
+.rec1_btn_userInfo{
     width: 92.5vw;
     height: 7.85vh;
     margin-left: 3.75vw;
-    margin-top: 29vh;
+    margin-top: 25.71vh;
     margin-bottom: 2.14vh;
+}
+.btn_form{
+    width: 92.5vw;
+    height: 7.85vh;
+    /* margin-bottom: 2.14vh; */
     border-radius: 8px;
     background-color: #5f9ea0;
 }
@@ -366,7 +370,6 @@ a{
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
-    /*line-height: normal;*/
     letter-spacing: -0.5px;
     text-align: center;
     color: #ffffff;
