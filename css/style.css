@@ -63,13 +63,11 @@ a{
 /*00_2_join*/
 /*userInfo에 다수 있음*/
 
-.rec3_join{
+.rec1_join{
     width: 72.5vw;
     height: 2.14vh;
     margin-left: 13.75vw;
-    margin-top: 13vh;
-}
-.rec3_join > p{
+    margin-top: 8.21vh;
     font-family: AppleSDGothicNeo;
     font-size: 0.75em;
     font-weight: bold;
@@ -80,15 +78,14 @@ a{
     text-align: center;
     color: #36797b;
 }
-.btn_form_join{
+.rec2_btn_join{
     width: 92.5vw;
     height: 7.85vh;
     margin-left: 3.75vw;
     margin-top: 1.78vh;
     margin-bottom: 2.14vh;
-    border-radius: 8px;
-    background-color: #5f9ea0;
 }
+
 /*02_mypage*/
 .frame_mypage{
     width: 100%;
