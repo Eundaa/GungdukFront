@@ -8,6 +8,12 @@ body {
     height: 100%;
     margin: 0 0 0 0;
 }
+.wrapper_popUp{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+}
 .header {
     width: 100%;
     height: 10vh;
@@ -47,13 +53,13 @@ body {
     background-color: #f6f6f6;
     position: relative;
 }
-.content_popup{
-    width: 100%;
-    height: 90vh;
-    background-color: rgba(0,0,0,0.3);
-    position: absolute;
+.content_popUp{
+    width: 87.5vw;
+    height: 67.67vh;
+    margin-left: 6.25vw;
+    margin-top: 16.16vh;
+    background-color: #ffffff;
 }
-
 a{
     text-decoration: none;
     display: inline-block;
@@ -531,8 +537,90 @@ a{
 .ic_check_none{}
 
 /*02_3_questPopup*/
-
-
+.ic_clear_alter{
+    width: 7.5vw;
+    height: 4.28vh;
+    margin-left: 76.25vw;
+    margin-top: 2.14vh;
+    position: absolute;
+}
+.gradient_white_m{
+    position: absolute;
+    width: 87.5vw;
+    height: 10vh;
+    margin-top: 18.57vh;
+    object-fit: contain;
+}
+.img_popUp{
+    width: 87.5vw;
+    height: 28.57vh;
+}
+.imgGra_popUp{
+    width: 87.5vw;
+    height: 28.57vh;
+    position: absolute;
+}
+.ex_popUp{
+    width: 87.5vw;
+    height: 30vh;
+    position: absolute;  
+}
+.ex_title_popUp{
+    height: 3.39vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+    margin-top: 2.85vh;
+    margin-left: 3.75vw;
+}
+.ex_bar_popUp{
+    width: 4.68vw;
+    height: 0.35vh;
+    background-color: #5f9ea0;
+    margin-top: 1vh;
+    margin-left: 3.75vw;
+}
+.ex_content_popUp{
+    width: 80vw;
+    font-family: AppleSDGothicNeo;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    color: #4a4a4a;
+    margin-left: 3.75vw;
+    margin-top: 2.14vh;
+}
+.btn_popUp_questPopup{
+    position: absolute;
+    margin-top: 30vh;
+}
+.btn_popUp{
+    width: 87.5vw;
+    height: 9.1vh;
+    background-color: #5f9ea0;
+}
+.btn_popUp_text{
+    height: 9.1vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.875em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    line-height: 9.1vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 /*03_mapChoice*/
 .rec1_mapChoice{
