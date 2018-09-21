@@ -8,6 +8,12 @@ body {
     height: 100%;
     margin: 0 0 0 0;
 }
+.wrapper_popUp{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+}
 .header {
     width: 100%;
     height: 10vh;
@@ -47,13 +53,13 @@ body {
     background-color: #f6f6f6;
     position: relative;
 }
-.content_popup{
-    width: 100%;
-    height: 90vh;
-    background-color: rgba(0,0,0,0.3);
-    position: absolute;
+.content_popUp{
+    width: 87.5vw;
+    height: 67.67vh;
+    margin-left: 6.25vw;
+    margin-top: 16.16vh;
+    background-color: #ffffff;
 }
-
 a{
     text-decoration: none;
     display: inline-block;
@@ -63,13 +69,11 @@ a{
 /*00_2_join*/
 /*userInfo에 다수 있음*/
 
-.rec3_join{
+.rec1_join{
     width: 72.5vw;
     height: 2.14vh;
     margin-left: 13.75vw;
-    margin-top: 13vh;
-}
-.rec3_join > p{
+    margin-top: 8.21vh;
     font-family: AppleSDGothicNeo;
     font-size: 0.75em;
     font-weight: bold;
@@ -80,15 +84,14 @@ a{
     text-align: center;
     color: #36797b;
 }
-.btn_form_join{
+.rec2_btn_join{
     width: 92.5vw;
     height: 7.85vh;
     margin-left: 3.75vw;
     margin-top: 1.78vh;
     margin-bottom: 2.14vh;
-    border-radius: 8px;
-    background-color: #5f9ea0;
 }
+
 /*02_mypage*/
 .frame_mypage{
     width: 100%;
@@ -299,13 +302,12 @@ a{
 
 /*02_1_uesrInfo*/
 
-.rec1_form{
+.rec_form{
     width: 92.5vw;
-    height: 10vh;
-    margin-top: 2.14vh;
+    height: 13.57vh;
     margin-left: 3.75vw;
 }
-.rec1_title_form{
+.title_form{
     width: 92.5vw;
     height: 2.85vh;
     font-family: AppleSDGothicNeo;
@@ -316,9 +318,9 @@ a{
     line-height: 1.6;
     letter-spacing: normal;
     color: #5f9ea0;
-    margin-top: 1.6vh;
+    padding-top: 1.6vh;
 }
-.rec1_box_form{
+.box_form{
     width: 92.5vw;
     height: 2.85vh;
     margin-top: 1.42vh  ;
@@ -331,15 +333,16 @@ a{
     letter-spacing: normal;
     color: rgba(0, 0, 0, 0.87);
 }
-.rec1_line_form{
+.line_form{
     width: 92.5vw;
     height: 0.17vh;
     margin-top: 0.71vh;
     background-color: #e4e4e4;
 }
-.rec2_form{
+.alert_form{
     width: 92.5vw;
     height: 2.14vh;
+    margin-top: 0.71vh;
     font-family: AppleSDGothicNeo;
     font-size: 0.625em;
     font-weight: bolder;
@@ -348,14 +351,18 @@ a{
     line-height: 1.2;
     letter-spacing: normal;
     color: #ff001f;
-    margin-left: 3.75vw;
 }
-.btn_form_userInfo{
+.rec1_btn_userInfo{
     width: 92.5vw;
     height: 7.85vh;
     margin-left: 3.75vw;
-    margin-top: 29vh;
+    margin-top: 25.71vh;
     margin-bottom: 2.14vh;
+}
+.btn_form{
+    width: 92.5vw;
+    height: 7.85vh;
+    /* margin-bottom: 2.14vh; */
     border-radius: 8px;
     background-color: #5f9ea0;
 }
@@ -366,7 +373,6 @@ a{
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
-    /*line-height: normal;*/
     letter-spacing: -0.5px;
     text-align: center;
     color: #ffffff;
@@ -531,8 +537,90 @@ a{
 .ic_check_none{}
 
 /*02_3_questPopup*/
-
-
+.ic_clear_alter{
+    width: 7.5vw;
+    height: 4.28vh;
+    margin-left: 76.25vw;
+    margin-top: 2.14vh;
+    position: absolute;
+}
+.gradient_white_m{
+    position: absolute;
+    width: 87.5vw;
+    height: 10vh;
+    margin-top: 18.57vh;
+    object-fit: contain;
+}
+.img_popUp{
+    width: 87.5vw;
+    height: 28.57vh;
+}
+.imgGra_popUp{
+    width: 87.5vw;
+    height: 28.57vh;
+    position: absolute;
+}
+.ex_popUp{
+    width: 87.5vw;
+    height: 30vh;
+    position: absolute;  
+}
+.ex_title_popUp{
+    height: 3.39vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+    margin-top: 2.85vh;
+    margin-left: 3.75vw;
+}
+.ex_bar_popUp{
+    width: 4.68vw;
+    height: 0.35vh;
+    background-color: #5f9ea0;
+    margin-top: 1vh;
+    margin-left: 3.75vw;
+}
+.ex_content_popUp{
+    width: 80vw;
+    font-family: AppleSDGothicNeo;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    color: #4a4a4a;
+    margin-left: 3.75vw;
+    margin-top: 2.14vh;
+}
+.btn_popUp_questPopup{
+    position: absolute;
+    margin-top: 30vh;
+}
+.btn_popUp{
+    width: 87.5vw;
+    height: 9.1vh;
+    background-color: #5f9ea0;
+}
+.btn_popUp_text{
+    height: 9.1vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.875em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    line-height: 9.1vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 /*03_mapChoice*/
 .rec1_mapChoice{
