@@ -1,3 +1,11 @@
+#html_splash { 
+    background: url(../img/splash-bg@2x.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 /*공통*/
 body {
     margin: 0 0 0 0;
@@ -65,7 +73,192 @@ a{
     display: inline-block;
     height: 0px;
 }
+.rec_form{
+    width: 92.5vw;
+    height: 13.57vh;
+    margin-left: 3.75vw;
+}
+.title_form{
+    width: 92.5vw;
+    height: 2.85vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.625em;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #5f9ea0;
+    padding-top: 1.6vh;
+}
+.box_form{
+    width: 92.5vw;
+    height: 2.85vh;
+    margin-top: 1.42vh  ;
+    font-family: AppleSDGothicNeo;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.87);
+}
+.line_form{
+    width: 92.5vw;
+    height: 0.17vh;
+    margin-top: 0.71vh;
+    background-color: #e4e4e4;
+}
+.alert_form{
+    width: 92.5vw;
+    height: 2.14vh;
+    margin-top: 0.71vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.625em;
+    font-weight: bolder;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: #ff001f;
+}
+.btn_form{
+    width: 92.5vw;
+    height: 7.85vh;
+    /* margin-bottom: 2.14vh; */
+    border-radius: 8px;
+    background-color: #5f9ea0;
+}
+.btn_text_form{
+    height: 7.85vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.875em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #ffffff;
+    line-height: 7.85vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
+/*00_1_login*/
+.rec1_img_login{
+    width: 100%;
+    height: 10vh;
+}
+.logotypegd{
+    width: 19.7vw;
+    height: 5.1vh;
+    margin-left: 40vw;
+    margin-top: 2.5vh;
+    object-fit: contain;
+}
+.rec2_btn_login{
+    width: 92.5vw;
+    height: 7.85vh;
+    margin-left: 3.75vw;
+    margin-top: 2.14vh;
+    margin-bottom: 2.14vh;
+}
+.rec3_kakaobtn_login{
+    width: 92.5vw;
+    height: 7.85vh;
+    margin-left: 3.75vw;
+    /* margin-top: 2.14vh; */
+    margin-bottom: 2.14vh;
+    position: absolute;
+}
+.rec3_kakaoimg_login{
+    width: 10.8vw;
+    height: 5.7vh;
+    float: left;
+}
+.ic-kakao-account{
+    width: 10.8vw;
+    height: 5.7vh;
+    margin-left: 20vw;
+    margin-top: 2vw;
+}
+.kakaobtn_form{
+    width: 92.5vw;
+    height: 7.85vh;
+    /* margin-bottom: 2.14vh; */
+    border-radius: 8px;
+    background-color: #ffde00;
+    float: left;
+}
+.kakaobtn_text_form{
+    width: 41.6vw;
+    height: 7.85vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.875em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #3c1e1e;
+    line-height: 7.85vh;
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%);
+}
+.rec4_btn_login{
+    width: 92.5vw;
+    height: 7.85vh;
+    margin-left: 3.75vw;
+    margin-top: 40vh;
+    margin-bottom: 2.14vh;
+    position: absolute;
+}
+.findbtn_form{
+    width: 53.8vw;
+    height: 7.9vh;
+    margin-right: 2.4vw;
+    /* margin-bottom: 2.14vh; */
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f5f5f5;
+    float: left;
+}
+.findbtn_text_form{
+    height: 7.85vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.875em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #36797b;
+    line-height: 7.85vh;
+}
+.joinbtn_form{
+    width: 36.3vw;
+    height: 7.9vh;
+    /* margin-bottom: 2.14vh; */
+    border-radius: 8px;
+    text-align: center;
+    background-color: #5f9ea0;
+    float: left;
+}
+.joinbtn_text_form{
+    height: 7.85vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.875em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #ffffff;
+    line-height: 7.85vh;
+}
 /*00_2_join*/
 /*userInfo에 다수 있음*/
 
@@ -302,84 +495,12 @@ a{
 
 /*02_1_uesrInfo*/
 
-.rec_form{
-    width: 92.5vw;
-    height: 13.57vh;
-    margin-left: 3.75vw;
-}
-.title_form{
-    width: 92.5vw;
-    height: 2.85vh;
-    font-family: AppleSDGothicNeo;
-    font-size: 0.625em;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.6;
-    letter-spacing: normal;
-    color: #5f9ea0;
-    padding-top: 1.6vh;
-}
-.box_form{
-    width: 92.5vw;
-    height: 2.85vh;
-    margin-top: 1.42vh  ;
-    font-family: AppleSDGothicNeo;
-    font-size: 14px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.14;
-    letter-spacing: normal;
-    color: rgba(0, 0, 0, 0.87);
-}
-.line_form{
-    width: 92.5vw;
-    height: 0.17vh;
-    margin-top: 0.71vh;
-    background-color: #e4e4e4;
-}
-.alert_form{
-    width: 92.5vw;
-    height: 2.14vh;
-    margin-top: 0.71vh;
-    font-family: AppleSDGothicNeo;
-    font-size: 0.625em;
-    font-weight: bolder;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.2;
-    letter-spacing: normal;
-    color: #ff001f;
-}
 .rec1_btn_userInfo{
     width: 92.5vw;
     height: 7.85vh;
     margin-left: 3.75vw;
     margin-top: 25.71vh;
     margin-bottom: 2.14vh;
-}
-.btn_form{
-    width: 92.5vw;
-    height: 7.85vh;
-    /* margin-bottom: 2.14vh; */
-    border-radius: 8px;
-    background-color: #5f9ea0;
-}
-.btn_text_form{
-    height: 7.85vh;
-    font-family: AppleSDGothicNeo;
-    font-size: 0.875em;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: -0.5px;
-    text-align: center;
-    color: #ffffff;
-    line-height: 7.85vh;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 /*02_2_quest*/
