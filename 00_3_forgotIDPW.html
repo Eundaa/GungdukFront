@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="js/javascript.js" type="text/javascript"></script>
+    <style type="text/css">
+        input{
+            width: 92.5vw;
+            height: 2.85vh;
+            border: none;
+        }
+    </style>
+    <title>forgotID</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <!-- png -->
+            <img src="img/ic-back.png"
+                 srcset="img/ic-back@2x.png 2x,
+                         img/ic-back@3x.png 3x"
+                 layout="responsive"
+                 class="ic_back">
+            <span class="header_title">아이디/비밀번호 찾기</span>
+        </div>
+
+        <!--navigation(tab)-->
+        <div class="navigation">
+            <ul class="tabs">
+                <li class="tab-link current" data-tab="tab-1">아이디 찾기</li>
+                <li class="tab-link" data-tab="tab-2">비밀번호 찾기</li>
+            </ul>
+            <div class="navigationLine"></div>
+        </div>
+
+        <!--content-->
+        <div class="content_forgotID">
+            <div id="tab-1" class="tab-content current">
+                <div class="rec1_forgotID">
+                    <div class="rec_form">
+                        <div class="title_form">ID</div>
+                        <div class="box_form"><input type="text" name="id"></div>
+                        <div class="line_form" id="line_id_form"></div>
+                        <div class="alert_form" id="alert_id_form"></div>
+                    </div>
+                </div>
+                <div class="rec2_btn_forgotID">
+                    <div class="btn_form">
+                        <span class="btn_text_form">ID 찾기</span>
+                    </div>
+                </div>
+            </div>
+            <div id="tab-2" class="tab-content">
+                <div class="rec3_forgotID">
+                    <div class="rec_form">
+                        <div class="title_form">ID</div>
+                        <div class="box_form"><input type="text" name="id"></div>
+                        <div class="line_form" id="line_id_form"></div>
+                        <div class="alert_form" id="alert_id_form"></div>
+                    </div>
+                    <div class="rec_form">
+                        <div class="title_form">휴대폰 번호</div>
+                        <div class="box_form"><input type="text" name="id"></div>
+                        <div class="line_form" id="line_id_form"></div>
+                        <div class="alert_form" id="alert_id_form"></div>
+                    </div>
+                </div>
+                <div class="rec2_btn_forgotID">
+                    <div class="btn_form">
+                        <span class="btn_text_form">비밀번호 찾기</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
