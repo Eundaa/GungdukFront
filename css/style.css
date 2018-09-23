@@ -73,6 +73,7 @@ a{
     display: inline-block;
     height: 0px;
 }
+/* rec_form series */
 .rec_form{
     width: 92.5vw;
     height: 13.57vh;
@@ -259,9 +260,8 @@ a{
     color: #ffffff;
     line-height: 7.85vh;
 }
-/*00_2_join*/
-/*userInfo에 다수 있음*/
 
+/*00_2_join*/
 .rec1_join{
     width: 72.5vw;
     height: 2.14vh;
@@ -285,6 +285,77 @@ a{
     margin-bottom: 2.14vh;
 }
 
+/*00_3_forgotIDPW*/
+.navigation {
+    width: 100%;
+    height: 8vh;
+}
+.navigationLine{
+    width: 100%;
+    height: 0.17vh;
+    background-color: #f5f5f5;
+    margin-top:0;
+}
+.content_forgotID{
+    width: 100%;
+    height: 63vh;
+}
+ul.tabs{
+    list-style: none;
+    margin-top:0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+ul.tabs li{
+    width: 49%;
+    display: inline-block;
+    background: none;
+    cursor: pointer;
+
+    font-family: AppleSDGothicNeo;
+    font-size: 13px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #4a4a4a;
+}
+ul.tabs li.current{
+    background:none;
+    font-family: AppleSDGothicNeo;
+    font-size: 13px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #5f9ea0;
+}
+.tab-content{
+    display: none;
+    width: 100%;
+    height: 63vh;
+}
+.tab-content.current{
+    display: inherit;
+    width: 100%;
+    height: 63vh;
+}
+.rec1_forgotID{
+    margin-top: 18.6vh;
+}
+.rec2_btn_forgotID{
+    width: 92.5vw;
+    height: 7.85vh;
+    margin-left: 3.75vw;
+    margin-bottom: 2.14vh;
+}
+.rec3_forgotID{
+    margin-top: 13vh;
+}
 /*02_mypage*/
 .frame_mypage{
     width: 100%;
