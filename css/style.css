@@ -743,6 +743,117 @@ a{
     transform: translateX(-50%);
 }
 
+/* 02_3_1_questPopupProgress */
+.header_popUp{
+    width: 87.5vw;
+    height: 10vh;
+}
+.header_title_popUp{
+    height: 10vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -0.6px;
+    text-align: center;
+    color: #36797b;
+    line-height: 10vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.ic_clear{
+    margin-left: 76.25vw;
+    margin-top: 2.85vh;
+}
+.quest_popUp{
+    height: 20.17vh;
+}
+.quest_Q_popUp{
+    width: 80vw;
+    height: 8.92vh;
+    margin-left: 3.75vw;
+    padding-top: 2.14vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.75em;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    color: #4a4a4a;
+}
+.quest_ex_popUp{
+    margin-left: 3.75vw;
+}
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+/* 앞에 radio공간 두고 뒤에 문자 css*/
+/* 체크된 애의 label, 체크 안 된 애의 label 모두!*/
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label 
+{
+    position: relative;
+    padding-left: 8.75vw;
+    padding-right: 4.68vw;
+    cursor: pointer;
+    line-height: 3.57vh;
+    display: inline-block;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.8125em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    color: #4a4a4a;
+}
+ /* radio 버튼의 border*/
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5.62vw;
+    height: 3.21vh;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+/* radio 버튼 선택시 내용물*/
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after { 
+    content: '';
+    width: 3.75vw;
+    height: 2.14vh;
+    background: #70bcbf;
+    position: absolute;
+    top: 0.71vh;
+    left: 1.25vw;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+    
+/* 02_4_questQuizSuc */
+
+/* 02_5_questQuizFail */
+
 /*03_mapChoice*/
 .rec1_mapChoice{
     width: 44.37vw;

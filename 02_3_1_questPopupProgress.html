@@ -8,40 +8,39 @@
     <title>qusetProgress</title>
 </head>
 <body>
-<div class="frame">
-    <div class = "header">
-        <!-- png -->
-        <img src="img/ic-back.png"
-             srcset="img/ic-back@2x.png 2x,
-             img/ic-back@3x.png 3x"
-             layout="responsive"
-             class="ic_back">
-        <span class="header_title">지도</span>
-    </div>
-    <div class="content_popup">
-        <div class="Rectangle-3">
-            <div class="Rectangle-4">
-                <div class="Rectangle-4-1">
-                    <img src="img/ic-clear-alter.png"
-                         srcset="img/ic-clear-alter@2x.png 2x,
-             img/ic-clear-alter@3x.png 3x"
-                         class="ic_clear_alter" />
-                    <img src="img/gradient-white-m.png"
-                         srcset="img/gradient-white-m@2x.png 2x,
-         img/gradient-white-m@3x.png 3x"
-                         class="gradient_white_m">
-                </div>
-                <img src="img/gyeongbok-gungj.png"
-                     srcset="img/gyeongbok-gungj@2x.png 2x,
-             img/gyeongbok-gungj@3x.png 3x" class="rec4_img" />
+<div class="wrapper_popUp">
+    <div class="content_popUp">
+        <div class="header_popUp">
+            <div class="header_title_popUp">근정전</div>
+            <img src="img/ic-clear.png"
+                srcset="img/ic-clear@2x.png 2x,
+                    img/ic-clear@3x.png 3x"
+                class="ic_clear">
+        </div>
+        <div class="img_popUp">
+            <img src="img/gyeongbok-gungj.png"
+                    srcset="img/gyeongbok-gungj@2x.png 2x,
+            img/gyeongbok-gungj@3x.png 3x" class="rec4_img" />
+        </div>
+        <div class="quest_popUp">
+            <div class="quest_Q_popUp">
+                근정전의 지붕 위에는 여러 장식들이 있어요! <br>
+                다음 보기 중 장식으로 만들어지지 않은 것은 무엇일까요?
             </div>
-            <div class="Rectangle-5">
-                <div class="rec5_title">근정전</div>
-                <div class="rec5_bar"></div>
-                <div class="rec5_content">조선 초기부터 역대 국왕의 즉위식이나 대례 등을 거행하던 곳으로,  현재의 것은 조선 말기인 1867년 흥선대원군이 중건한 것입니다. 현존하는 최대의 목조건물이라고 해요. </div>
-            </div>
-            <div class="Rectangle-6">
-                <span class="rec6_text">퀘스트 시작하기</span>
+            <form action="#">
+                <div class="quest_ex_popUp">
+                    <input type="radio" id="e1" name="radio-group" checked>
+                    <label for="e1">저팔계</label>
+                    <input type="radio" id="e2" name="radio-group">
+                    <label for="e2">손오공</label>
+                    <input type="radio" id="e3" name="radio-group">
+                    <label for="e3">해치</label>
+                </div>   
+            </form> 
+        </div>
+        <div class="btn_popUp_questProgress">
+            <div class="btn_popUp">
+                <span class="btn_popUp_text">제출하기</span>
             </div>
         </div>
     </div>
