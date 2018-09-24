@@ -1,11 +1,3 @@
-#html_splash { 
-    background: url(../img/splash-bg@2x.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 /*공통*/
 body {
     margin: 0 0 0 0;
@@ -146,7 +138,82 @@ a{
     left: 50%;
     transform: translateX(-50%);
 }
+/* current_status series */
+.current_status{
+    width: 100%;
+    height: 28.92vh;
+    background-color: #ffffff;
+}
+.img_current_status{
+    width: 100%;
+    height: 13.92vh;
+}
+.ic_level{
+    width: 20vw;
+    height: 11.42vh;
+    margin-left: 40vw;
+    margin-top: 2.5vh;
+    object-fit: contain;
+}
+.ic_help{
+    position: absolute;
+    width: 7.5vw;
+    height: 4.28vh;
+    margin-left: 26.25vw;
+    margin-top: 3.57vh;
+}
+.name_current_status{
+    width: 42.5vw;
+    height: 3.03vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.875em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4a4a4a;
+    margin-left: 28.7vw;
+    margin-top: 1vh;
+}
+.points_current_status{
+    width: 25vw;
+    height: 2.67vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.75em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    text-align: center;
+    color: #5f9ea0;
+    margin-left: 37.5vw;
+}
+.bar_current_status{
+    width: 73.8vw;
+    height: 1.42vh;
+    border-radius: 4px;
+    background-color: #d8d8d8;
+    margin-left: 13.1vw;
+    margin-top: 1.96vh;
+}
+.done_current_status{
+    width: 61.2vw;
+    height: 1.42vh;
+    border-radius: 4px;
+    background-color: #5f9ea0;
+}
 
+/*00_0_splash*/
+#html_splash { 
+    background: url(../img/splash-bg@2x.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 /*00_1_login*/
 .rec1_img_login{
     width: 100%;
@@ -356,6 +423,179 @@ ul.tabs li.current{
 .rec3_forgotID{
     margin-top: 13vh;
 }
+
+
+/*01_main*/
+#html_main { 
+    background: url(../img/mainimg.jpg) no-repeat top fixed; 
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+.mainimg{
+    width: 100%;
+    position: absolute;
+}
+.header_main{
+    width: 100%;
+    height: 37.5vh;
+}
+.imgGra_main{
+    width: 100%;
+    height: 37.5vh;
+}
+.logotype{
+    width: 19.7vw;
+    height: 5.1vh;
+    margin-left: 40vw;
+    margin-top: 2.5vh;
+    object-fit: contain;
+}
+.gradient_bg_white {
+    width: 100%;
+    height: 84px;
+    object-fit: contain;
+}
+.gradient_bg_black {
+    width: 100%;
+    height: 84px;
+    object-fit: contain;
+}
+.content_main{
+    width: 100%;
+    height: 62.5vh;
+}
+.rec1_weather_main{
+    width: 100%;
+    height: 17vh;
+}
+.rec1_wcontenets_main{
+    width: 65%;
+    height: 17vh;
+    float: left;
+}
+.rec1_temp_main{
+    width: 50vw;
+    height: 3vh;
+    font-family: SFProDisplay;
+    font-size: 3vh;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.7px;
+    color: #5f9ea0;
+    font-weight: normal;
+    margin-left: 6.3vw;
+    margin-top: 2.3vh;
+}
+.rec1_word_main{
+    width: 50vw;
+    height: 2.3vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 2vh;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    color: #4a4a4a;
+    letter-spacing: -0.4px;
+    margin-left: 6.3vw;
+    margin-top: 1.2vh;
+}
+.rec1_local_main{
+    width: 50vw;
+    height: 2.2vh;
+    font-family: SFProDisplay;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    color: #4a4a4a;
+    margin-left: 6.3vw;
+    margin-top: 0.3vh;
+}
+.rec1_wpic_main{
+    width: 35%;
+    height: 17vh;
+    float: left;
+}
+.sun{
+    width: 13.8vw;
+    margin-top: 4vh;
+    margin-left: 6vh;
+}
+.rec2_status_main{
+    width: 100%;
+    height: 28vh;
+}
+.rec3_link_main{
+    width: 100%;
+    height: 16.58vh;
+    background-color: #f6f6f6;
+}
+.rec3_mypage_main{
+    width: 31.3%;
+    height: 15vh;
+    float: left;
+    margin-left: 1.7vw;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 0.8vh;
+}
+.ic_mypage{
+    width: 7vw;
+    margin-left: 12vw;
+    margin-top: 3.6vh;
+}
+.ic_map{
+    width: 7vw;
+    margin-left: 12vw;
+    margin-top: 3.6vh;
+}
+.ic_castle{
+    width: 7vw;
+    margin-left: 12vw;
+    margin-top: 3.6vh;
+}
+.rec3_name_main{
+    font-family: AppleSDGothicNeo;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    text-align: center;
+    color: #4a4a4a;
+    margin-top: 1vh;
+}
+.rec3_map_main{
+    width: 31.3%;
+    height: 15vh;
+    float: left;
+    margin-left: 1.2vw;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 0.8vh;
+}
+.rec3_palace_main{
+    width: 31.3%;
+    height: 15vh;
+    float: left;
+    margin-left: 1.2vw;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 0.8vh;
+}
+
 /*02_mypage*/
 .frame_mypage{
     width: 100%;
@@ -369,77 +609,11 @@ ul.tabs li.current{
 }
 .rec1_mypage{
     width: 100%;
-    height: 28.92vh;
-    background-color: #ffffff;
-}
-.rec1_img_mypage{
-    width: 100%;
-    height: 13.92vh;
-}
-.ic_level{
-    width: 20vw;
-    height: 11.42vh;
-    margin-left: 40vw;
-    margin-top: 2.5vh;
-    object-fit: contain;
-}
-.ic_help{
-    position: absolute;
-    width: 7.5vw;
-    height: 4.28vh;
-    margin-left: 26.25vw;
-    margin-top: 3.57vh;
-}
-.rec1_name_mypage{
-    width: 42.5vw;
-    height: 3.03vh;
-    font-family: AppleSDGothicNeo;
-    font-size: 0.875em;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: #4a4a4a;
-    margin-left: 28.7vw;
-    margin-top: 1vh;
-}
-.rec1_points_mypage{
-    width: 25vw;
-    height: 2.67vh;
-    font-family: AppleSDGothicNeo;
-    font-size: 0.75em;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.4px;
-    text-align: center;
-    color: #5f9ea0;
-    margin-left: 37.5vw;
-}
-.rec1_bar_mypage{
-    width: 73.8vw;
-    height: 1.42vh;
-    border-radius: 4px;
-    background-color: #d8d8d8;
-    margin-left: 13.1vw;
-    margin-top: 1.96vh;
-}
-.rec1_done_mypage{
-    width: 61.2vw;
-    height: 1.42vh;
-    border-radius: 4px;
-    background-color: #5f9ea0;
-}
-.rec2_mypage{
-    width: 100%;
     height: 53.04vh;
     background-color: #f6f6f6;
     padding-top: 2.85vh;
 }
-.rec2_title_mypage{
+.rec1_title_mypage{
     height: 3.39vh;
     font-family: AppleSDGothicNeo;
     font-size: 1em;
@@ -452,7 +626,7 @@ ul.tabs li.current{
     margin-left: 3.9vw;
     margin-top: 2.85vh;
 }
-.rec3_mypage{
+.rec2_mypage{
     width: 92.5vw;
     height: 9.64vh;
     margin-left: 3.75vw;
@@ -461,7 +635,7 @@ ul.tabs li.current{
     border-radius: 4px;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
 }
-.rec3_title_mypage{
+.rec2_title_mypage{
     width: 25vw;
     height: 2.67vh;
     font-family: AppleSDGothicNeo;
@@ -476,7 +650,7 @@ ul.tabs li.current{
     margin-left: 4.06vw;
     position: absolute;
 }
-.rec3_points_mypage{
+.rec2_points_mypage{
     width: 25vw;
     height: 2.67vh;
     font-family: AppleSDGothicNeo;
@@ -492,7 +666,7 @@ ul.tabs li.current{
     margin-left: 62.5vw;
     margin-top: 2.14vh;
 }
-.rec3_bar_mypage{
+.rec2_bar_mypage{
     width: 85vw;
     height: 1.07vh;
     border-radius: 3px;
@@ -501,39 +675,39 @@ ul.tabs li.current{
     margin-top: 6.42vh;
     position: absolute;
 }
-.rec3_doneG_mypage{
+.rec2_doneG_mypage{
     width: 69.37vw;
     height: 1.07vh;
     border-radius: 3px;
     background-color: #5f9ea0;
 }
-.rec3_doneCha_mypage{
+.rec2_doneCha_mypage{
     width: 47.5vw;
     height: 1.07vh;
     border-radius: 3px;
     background-color: #5f9ea0;
 }
-.rec3_doneD_mypage{
+.rec2_doneD_mypage{
     width: 63.12vw;
     height: 1.07vh;
     border-radius: 3px;
     background-color: #5f9ea0;
 }
-.rec3_doneCdg_mypage{
+.rec2_doneCdg_mypage{
     width: 19.37vw;
     height: 1.07vh;
     border-radius: 3px;
     background-color: #5f9ea0;
 }
-.rec4_mypage{
+.rec3_mypage{
     width: 100%;
     height: 23.57vh;
 }
-.rec5_mypage{
+.rec4_mypage{
     width: 100%;
     height: 7.85vh;
 }
-.rec5_text_mypage{
+.rec4_text_mypage{
     position: absolute;
     height: 3.03vh;
     font-family: AppleSDGothicNeo;
@@ -547,7 +721,7 @@ ul.tabs li.current{
     margin-top: 2.5vh;
     margin-left: 5vw;
 }
-.rec5_ic_mypage{
+.rec4_ic_mypage{
     width: 7.5vw;
     height: 4.28vh;
     object-fit: contain;
@@ -577,87 +751,28 @@ ul.tabs li.current{
 /*02_2_quest*/
 .rec1_quest{
     width: 100%;
-    height: 28.92vh;
-    background-color: #ffffff;
-}
-.rec1_img_quset{
-    width: 20vw;
-    height: 11.42vh;
-    margin-left: 40vw;
-    margin-top: 2.5vh;
-}
-.ic_level{
-    width: 20vw;
-    height: 11.42vh;
-    object-fit: contain;
-}
-.rec1_name_quest{
-    width: 42.5vw;
-    height: 3.03vh;
-    font-family: AppleSDGothicNeo;
-    font-size: 0.875em;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: #4a4a4a;
-    margin-left: 28.7vw;
-    margin-top: 1vh;
-}
-.rec1_points_quest{
-    width: 25vw;
-    height: 2.67vh;
-    font-family: AppleSDGothicNeo;
-    font-size: 0.75em;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.4px;
-    text-align: center;
-    color: #5f9ea0;
-    margin-left: 37.5vw;
-}
-.rec1_bar_quest{
-    width: 73.8vw;
-    height: 1.42vh;
-    border-radius: 4px;
-    background-color: #d8d8d8;
-    margin-left: 13.1vw;
-    margin-top: 1.96vh;
-}
-.rec1_done_quest{
-    width: 61.2vw;
-    height: 1.42vh;
-    border-radius: 4px;
-    background-color: #5f9ea0;
-}
-.rec2_quest{
-    width: 100%;
     height: 61.1vh;
     background-color: #f6f6f6;
 }
-.rec2_g_quest{
+.rec1_g_quest{
     width: 44.37vw;
     height: 25.35vh;
     float: left;
     margin: 3.92vh 0px 0px 5.5vw;
 }
-.rec2_chag_quest{
+.rec1_chag_quest{
     width: 44.37vw;
     height: 25.35vh;
     float: left;
     margin: 3.92vh 5.5vw 0px 0px;
 }
-.rec2_d_quest{
+.rec1_d_quest{
     width: 44.37vw;
     height: 25.35vh;
     float: left;
     margin: 0px 0px 0px 5.5vw;
 }
-.rec2_chad_quest{
+.rec1_chad_quest{
     width: 44.37vw;
     height: 25.35vh;
     float: left;
