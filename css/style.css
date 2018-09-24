@@ -1037,9 +1037,57 @@ ul.tabs li.current{
 }
     
 /* 02_4_questQuizSuc */
+.result_popUp{
+    width: 87.5vw;
+    height: 48.75vh;
+}
+.result_title_popUp{
+    width: 64.06vw;
+    height: 5.17vh;
+    padding-top: 5.35vh;
+    margin-left: 11.87vw;
+    font-family: AppleSDGothicNeo;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.9px;
+    text-align: center;
+    color: #36797b;
+}
+.pic_win {
+    width: 52.5vw;
+    height: 20.714vh;
+    margin-top: 3.75vh;
+    margin-left: 17.5vw;
+    object-fit: contain;
+}
+.result_content_popUp{
+    width: 63.75vw;
+    height: 3.03vh;
+    margin-left: 11.87vw;
+    margin-top: 4.1vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #5f9ea0;
+}
 
 /* 02_5_questQuizFail */
-
+.pic_failed {
+    width: 41.25vw;
+    height: 18.75vh;
+    margin-top: 4.28vh;
+    margin-left: 24.375vw;
+    object-fit: contain;
+  }
+  
 /*03_mapChoice*/
 .rec1_mapChoice{
     width: 44.37vw;
