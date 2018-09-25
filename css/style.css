@@ -55,7 +55,6 @@ body {
 }
 a{
     text-decoration: none;
-    display: inline-block;
     height: 0px;
 }
 /* popUp series */
@@ -147,7 +146,6 @@ a{
 .btn_form{
     width: 92.5vw;
     height: 7.85vh;
-    /* margin-bottom: 2.14vh; */
     border-radius: 8px;
     background-color: #5f9ea0;
 }
@@ -1183,26 +1181,26 @@ ul.tabs li.current{
     object-fit: contain;
   }
   
-/*03_mapChoice*/
-.rec1_mapChoice{
+/*04_hpConnect*/
+.rec1_hpConnect{
     width: 44.37vw;
     height: 25.35vh;
     float: left;
     margin: 12.7vh 0px 0px 5.5vw;
 }
-.rec2_mapChoice{
+.rec2_hpConnect{
     width: 44.37vw;
     height: 25.35vh;
     float: left;
     margin: 12.7vh 5.5vw 0px 0px;
 }
-.rec3_mapChoice{
+.rec3_hpConnect{
     width: 44.37vw;
     height: 25.35vh;
     float: left;
     margin: 0px 0px 0px 5.5vw;
 }
-.rec4_mapChoice{
+.rec4_hpConnect{
     width: 44.37vw;
     height: 25.35vh;
     float: left;
