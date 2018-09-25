@@ -53,6 +53,12 @@ body {
     background-color: #f6f6f6;
     position: relative;
 }
+a{
+    text-decoration: none;
+    display: inline-block;
+    height: 0px;
+}
+/* popUp series */
 .content_popUp{
     width: 87.5vw;
     height: 67.67vh;
@@ -60,10 +66,32 @@ body {
     margin-top: 16.16vh;
     background-color: #ffffff;
 }
-a{
-    text-decoration: none;
-    display: inline-block;
-    height: 0px;
+.header_popUp{
+    width: 87.5vw;
+    height: 10vh;
+}
+.result_popUp{
+    width: 87.5vw;
+    height: 48.75vh;
+}
+.btn_popUp{
+    width: 87.5vw;
+    height: 9.1vh;
+    background-color: #5f9ea0;
+}
+.btn_popUp_text{
+    height: 9.1vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.875em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    line-height: 9.1vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 /* rec_form series */
 .rec_form{
@@ -535,30 +563,22 @@ ul.tabs li.current{
 }
 .rec3_link_main{
     width: 100%;
-    height: 16.58vh;
+    height: 18vh;
     background-color: #f6f6f6;
+    position: absolute;
+    bottom:0;
 }
 .rec3_mypage_main{
     width: 31.3%;
-    height: 15vh;
+    height: 16vh;
     float: left;
-    margin-left: 1.7vw;
+    margin-left: 1.8vw;
     border-radius: 4px;
     background-color: #ffffff;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-    margin-top: 0.8vh;
+    margin-top: 1vh;
 }
 .ic_mypage{
-    width: 7vw;
-    margin-left: 12vw;
-    margin-top: 3.6vh;
-}
-.ic_map{
-    width: 7vw;
-    margin-left: 12vw;
-    margin-top: 3.6vh;
-}
-.ic_castle{
     width: 7vw;
     margin-left: 12vw;
     margin-top: 3.6vh;
@@ -577,24 +597,114 @@ ul.tabs li.current{
 }
 .rec3_map_main{
     width: 31.3%;
-    height: 15vh;
+    height: 16vh;
     float: left;
     margin-left: 1.2vw;
     border-radius: 4px;
     background-color: #ffffff;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-    margin-top: 0.8vh;
+    margin-top: 1vh;
 }
-.rec3_palace_main{
+.ic_map{
+    width: 7vw;
+    margin-left: 12vw;
+    margin-top: 3.6vh;
+}
+.rec3_castle_main{
     width: 31.3%;
-    height: 15vh;
+    height: 16vh;
     float: left;
     margin-left: 1.2vw;
     border-radius: 4px;
     background-color: #ffffff;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-    margin-top: 0.8vh;
+    margin-top: 1vh;
 }
+.ic_castle{
+    width: 7vw;
+    margin-left: 12vw;
+    margin-top: 3.6vh;
+}
+
+/*01_2_mainLevel*/
+.rec1_mainLevel{
+    width: 24vw;
+    height: 44vh;
+    margin-top:4.75vh;
+    margin-left: 7vw;
+    background-color: rebeccapurple;
+    float: left;
+}
+.rec2_mainLevel{
+    width:0.83vw;
+    height: 44vh;
+    margin-top:4.75vh;
+    margin-left: 3vw;
+    background-color: black;
+    float: left;
+}
+.rec3_mainLevel{
+    width: 33vw;
+    height: 44vh;
+    margin-top:4.75vh;
+    margin-left: 2.2vw;
+    float: left;
+}
+.rec3_level_mainLevel{
+    width: 33vw;
+    height: 7.5vh;
+}
+.rec3_infoBox_mainLevel{
+    width: 15.2vw;
+    float: left;
+    margin-left: 4.4vw;
+}
+.rec3_info1_mainLevel{
+    width: 15.2vw;
+    height: 1.875vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 1.6vh;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    color: #9b9b9b;
+    margin-top:1.6vh;
+}
+.rec3_info2_mainLevel{
+    width: 15.2vw;
+    height: 2.66vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 2.2vh;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    color: #9b9b9b;
+}
+.ic_level_king {
+    width: 13.3vw;
+    float: left;
+}
+.ic_level_gentleman{
+    width: 13.3vw;
+    float: left;
+}
+.ic_level_general{
+    width: 13.3vw;
+    float: left;
+}
+.ic_level_civilian{
+    width: 13.3vw;
+    float: left;
+}
+.ic_level_labor{
+    width: 13.3vw;
+    float: left;
+}
+
 
 /*02_mypage*/
 .frame_mypage{
@@ -919,31 +1029,8 @@ ul.tabs li.current{
     position: absolute;
     margin-top: 30vh;
 }
-.btn_popUp{
-    width: 87.5vw;
-    height: 9.1vh;
-    background-color: #5f9ea0;
-}
-.btn_popUp_text{
-    height: 9.1vh;
-    font-family: AppleSDGothicNeo;
-    font-size: 0.875em;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: -0.5px;
-    color: #ffffff;
-    line-height: 9.1vh;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
 /* 02_3_1_questPopupProgress */
-.header_popUp{
-    width: 87.5vw;
-    height: 10vh;
-}
 .header_title_popUp{
     height: 10vh;
     font-family: AppleSDGothicNeo;
@@ -1049,10 +1136,6 @@ ul.tabs li.current{
 }
     
 /* 02_4_questQuizSuc */
-.result_popUp{
-    width: 87.5vw;
-    height: 48.75vh;
-}
 .result_title_popUp{
     width: 64.06vw;
     height: 5.17vh;
