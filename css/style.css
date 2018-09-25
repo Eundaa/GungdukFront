@@ -455,23 +455,21 @@ ul.tabs li.current{
 
 /*01_main*/
 #html_main { 
-    background: url(../img/mainimg.jpg) no-repeat top fixed; 
+    background: url(../img/mainimg.jpg) no-repeat top; 
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size: contain;
 }
-.mainimg{
-    width: 100%;
-    position: absolute;
-}
 .header_main{
     width: 100%;
-    height: 37.5vh;
+    height: 33.92vh;
+    position: relative;
 }
 .imgGra_main{
     width: 100%;
-    height: 37.5vh;
+    height: 33.92vh;
+    position: relative;
 }
 .logotype{
     width: 19.7vw;
@@ -479,15 +477,17 @@ ul.tabs li.current{
     margin-left: 40vw;
     margin-top: 2.5vh;
     object-fit: contain;
+    position: absolute;
 }
 .gradient_bg_white {
     width: 100%;
-    height: 84px;
+    height: 15vh;
+    margin-top: 3.5vh;
     object-fit: contain;
 }
 .gradient_bg_black {
     width: 100%;
-    height: 84px;
+    height: 15vh;
     object-fit: contain;
 }
 .content_main{
