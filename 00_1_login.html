@@ -25,53 +25,126 @@
     <title>login</title>
 </head>
 <body>
-<div class="wrapper">
-    <div class = "header">
-        <div class="rec1_img_login">
-            <img src="img/logotypegd@2x.png"
-                 class="logotypegd">
+    <div class="wrapper">
+        <div class = "header">
+            <div class="rec1_img_login">
+                <img src="img/logotypegd@2x.png"
+                    class="logotypegd">
+            </div>
+        </div>
+        <div class="content">
+            <form id="form_login">
+                <div class="rec_form">
+                    <!-- id -->
+                    <label for="inputID_login" class="title_form">ID</label>
+                    <div class="box_form">
+                        <input id="inputID_login" type="text" name="id" placeholder="아이디를 입력하세요." required>
+                    </div>
+                    <div class="line_form" id="line_id_form"></div>
+                    <div class="alert_form" id="alert_id_form"></div>
+                </div>
+                <div class="rec_form">
+                    <!-- 비밀번호 -->
+                    <label for="inputPW_login" class="title_form">비밀번호</label>
+                    <div class="box_form">
+                        <input id="inputPW_login" type="password" name="password" placeholder="비밀번호를 입력하세요.">
+                    </div>
+                    <div class="line_form" id="line_pw_form"></div>
+                    <div class="alert_form" id="alert_pw_form"></div>
+                </div>
+            </form>
+            <div class="rec2_btn_login">
+                <div class="btn_form">
+                    <span class="btn_text_form">로그인</span>
+                </div>
+            </div>
+            <div class="rec3_kakaobtn_login">
+                <div class="kakaobtn_form">
+                    <img src="img/ic-kakao-account@2x.png"
+                            class="ic-kakao-account">
+                    <span class="kakaobtn_text_form">카카오 계정으로 로그인</span>
+                </div>
+            </div>
+            <div class="rec4_login"></div>
+            <div class="rec5_btn_login">
+                <a href="00_3_forgotIDPW.html">
+                    <div class="findbtn_form">
+                        <span class="findbtn_text_form">아이디/비밀번호 찾기</span>
+                    </div>
+                </a>
+                <a href="00_2_join.html">
+                    <div class="joinbtn_form">
+                        <span class="joinbtn_text_form">회원가입</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
-    <div class="content">
-        <form>
-            <div class="rec_form">
-                <div class="title_form">ID</div>
-                <div class="box_form"><input type="text" name="id" placeholder="아이디를 입력해주세요."></div>
-                <div class="line_form" id="line_id_form"></div>
-                <div class="alert_form" id="alert_id_form"></div>
-            </div>
-            <div class="rec_form">
-                <div class="title_form">비밀번호</div>
-                <div class="box_form"><input type="password" name="password" placeholder="비밀번호를 입력해주세요."></div>
-                <div class="line_form" id="line_pw_form"></div>
-                <div class="alert_form" id="alert_pw_form"></div>
-            </div>
-        </form>
-        <div class="rec2_btn_login">
-            <div class="btn_form">
-                <span class="btn_text_form">로그인</span>
-            </div>
-        </div>
-        <div class="rec3_kakaobtn_login">
-            <div class="kakaobtn_form">
-                <img src="img/ic-kakao-account@2x.png"
-                        class="ic-kakao-account">
-                <span class="kakaobtn_text_form">카카오 계정으로 로그인</span>
-            </div>
-        </div>
-        <div class="rec4_btn_login">
-            <a href="00_3_forgotIDPW.html">
-                <div class="findbtn_form">
-                    <span class="findbtn_text_form">아이디/비밀번호 찾기</span>
-                </div>
-            </a>
-            <a href="00_2_join.html">
-                <div class="joinbtn_form">
-                    <span class="joinbtn_text_form">회원가입</span>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function(){
+        $(".rec2_btn_login").click(function(){
+            
+            var userID = $("#inputID_login").val();
+            var password = $("#inputPW_login").val();
+            data = "{\"id\" : \"" + userID + "\", \"pw\" : \"" +  password + "\"}";
+
+            $.ajax({
+                type : "POST",
+                url : "http://13.125.138.168:8080/gungduk/api/v1/login",
+            
+                data : data,
+                async:false,
+                contentType : "application/json; charset=UTF-8",
+                success:function(data){
+                    if($("#inputID_login").val()==""&& $("#inputPW_login").val()==""){
+                        $('#alert_id_form').text('ID를 입력하세요.');
+                        $('#alert_pw_form').text('비밀번호를 입력하세요.');
+                        if($("#inputID_login").keydown(function(){
+                            $('#alert_id_form').empty();
+                        }));
+                        if($("#inputPW_login").keydown(function(){
+                            $('#alert_pw_form').empty();
+                        }));
+
+                    }
+                    else if($("#inputID_login").val()==""){
+                        $('#alert_id_form').text('ID를 입력하세요.');
+                        if($("#inputID_login").keydown(function(){
+                            $('#alert_id_form').empty();
+                        }));
+                    }
+                    else if($("#inputPW_login").val()==""){
+                        $('#alert_pw_form').text('비밀번호를 입력하세요.');
+                        if($("#inputPW_login").keydown(function(){
+                            $('#alert_pw_form').empty();
+                        }));
+                    }
+                    else{
+                        if(data != 'fail'){
+                            window.sessionStorage.setItem("id", data);
+                            location.replace("01_0_main.html");
+                        }
+                        else if(data == null){
+                            alert("회원 정보가 없습니다.");
+                        }
+                        else{
+                            alert("회원 정보가 올바르지 않습니다.");
+                        }
+                    }
+                },
+                error:function(request, error){
+                    console.log(error.responseText);
+                console.log(request.responseText);
+                }
+            });
+        });
+        });
+    </script>
 </body>
 </html>
