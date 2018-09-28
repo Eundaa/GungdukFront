@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" id="html_checkPW">
+<head>
+    <!-- Required meta tags -->
+    <title>checkPW</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style type="text/css">
+        input{
+            width: 92.5vw;
+            height: 2.85vh;
+            border: none;
+        }
+        input::placeholder{
+            font-family: AppleSDGothicNeo;
+            font-size: 2.1vh;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.14;
+            letter-spacing: normal;
+            color: #e4e4e4;
+        }
+    </style>
+    <script>
+		//이메일 받아오기
+		var userID = sessionStorage.getItem("id");
+	</script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class = "header">
+            <div class="rec1_img_checkPW">
+                <img src="img/logotypegd@2x.png"
+                    class="logotypegd">
+            </div>
+        </div>
+        <div class="content_checkPW">
+            <form>
+                <div class="rec_form_checkPW">
+                    <!-- id -->
+                    <label for="inputID_checkPW" class="title_form">ID</label>
+                    <div class="box_form">
+                        <script>
+                            document.write("<p class ='font-weight-bold'>"+ userID+"</p>");
+                        </script>                    </div>
+                    <!-- <div class="line_form" id="line_id_form"></div>
+                    <div class="alert_form" id="alert_id_form"></div> -->
+                </div>
+                <div class="rec_form">
+                    <!-- 비밀번호 -->
+                    <label for="inputPW_checkPW" class="title_form">비밀번호</label>
+                    <div class="box_form">
+                        <input id="inputPW_checkPW" type="password" name="password" placeholder="비밀번호를 입력하세요.">
+                    </div>
+                    <div class="line_form" id="line_pw_form"></div>
+                    <div class="alert_form" id="alert_pw_form"></div>
+                </div>
+            </form>
+            <div class="rec1_btn_checkPW">
+                <div class="btn_check_form" id="btn_check_checkPW">
+                    <span class="btn_checkText_form">확인</span>
+                </div>
+                <a href="02_mypage.html">
+                    <div class="btn_cancle_form">
+                        <span class="btn_cancleText_form">취소</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
+    <!--사용자가 입력한 비밀번호를 보내서 맞으면 회원정보수정페이지로 이동-->
+    <script>
+        $(function(){
+            $("#btn_check_checkPW").click(function(){
+                var userID = sessionStorage.getItem("id");
+                var userPW = $("#inputPW_checkPW").val();
+                data = "{\"id\" : \"" + userID + "\", \"pw\" : \"" +  userPW + "\"}";
+
+                $.ajax({
+                    type : "POST",
+                    url : "http://13.125.138.168:8080/gungduk/api/v1/validatePw",
+                    data : data,
+                    async : false,
+                    contentType : "application/json; charset=UTF-8",
+                    success:function(data){
+                        //비밀번호가 일치하지 않을 경우, -1을 받음
+                        if(data == -1){
+                            alert("비밀번호가 일치하지 않습니다.");
+                        }
+                        else{
+                            //일치할 경우, 세션에 저장하고 changeInfo.html로 이동 
+                            window.sessionStorage.setItem("session_pw", data);
+                            location.replace("02_1_userInfo.html");
+                        }
+                    },
+                    error:function(request, error){
+                        console.log(error.responseText);
+                        console.log(request.responseText);
+                    }  
+                });
+            });
+        });
+  </script>
+</body>
+</html>
