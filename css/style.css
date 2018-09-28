@@ -309,6 +309,7 @@ a{
     margin-top: 40vh;
     margin-bottom: 2.14vh;
     position: absolute;
+    bottom: 0;
 }
 .findbtn_form{
     width: 53.8vw;
@@ -389,7 +390,7 @@ a{
     background-color: #f5f5f5;
     margin-top:0;
 }
-.content_forgotID{
+.content_forgotIDPW{
     width: 100%;
     height: 63vh;
 }
@@ -414,6 +415,8 @@ ul.tabs li{
     letter-spacing: -0.5px;
     text-align: center;
     color: #4a4a4a;
+    margin-top:2.5vh;
+    margin-bottom: 1.875vh;
 }
 ul.tabs li.current{
     background:none;
@@ -437,17 +440,27 @@ ul.tabs li.current{
     width: 100%;
     height: 63vh;
 }
-.rec1_forgotID{
-    margin-top: 18.6vh;
+.rec_form_forgotIDPW{
+    width: 92.5vw;
+    height: 13.57vh;
 }
-.rec2_btn_forgotID{
+.rec1_forgotIDPW{
+    width: 92.5vw;
+    height: 13.57vh;
+    margin-top: 18.6vh;
+    margin-left: 3.75vw;
+}
+.rec2_btn_forgotIDPW{
     width: 92.5vw;
     height: 7.85vh;
     margin-left: 3.75vw;
     margin-bottom: 2.14vh;
 }
-.rec3_forgotID{
+.rec3_forgotIDPW{
+    width: 92.5vw;
+    height: 27.14vh;
     margin-top: 13vh;
+    margin-left: 3.75vw;
 }
 
 
@@ -962,8 +975,9 @@ ul.tabs li.current{
     width: 92.5vw;
     height: 7.85vh;
     margin-left: 3.75vw;
-    margin-top: 25.71vh;
-    margin-bottom: 2.14vh;
+    position: absolute;
+    bottom:0;
+    margin-bottom: 1.875vh;
 }
 
 /*02_2_quest*/

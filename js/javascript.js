@@ -18,25 +18,3 @@ $(window).resize(function(){
         top: (winHeight - $('.logo').outerHeight())/2
     });
 })
-
-$(window).resize(function(){
-    $('ul.tabs li').css({
-    marginTop : $('.navigation').height()*0.364,
-    marginBottom : $('.navigation').height()*0.283
-    })
-});
-
-//Implementing tabbar in 00_3_forgotID.html
-$(document).ready(function(){
-   
-    $('ul.tabs li').click(function(){
-      var tab_id = $(this).attr('data-tab');
-   
-      $('ul.tabs li').removeClass('current');
-      $('.tab-content').removeClass('current');
-   
-      $(this).addClass('current');
-      $("#"+tab_id).addClass('current');
-    })
-   
-});
