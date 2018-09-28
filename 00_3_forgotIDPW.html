@@ -50,12 +50,12 @@
             <div id="tab-1" class="tab-content current">
                 <div class="rec1_forgotIDPW">
                     <div class="rec_form_forgotIDPW" id="resultID_forgotIDPW">
-                        <label for="inputPhoneNum_forgotIDPW" class="title_form">핸드폰 번호</label>
+                        <label for="inputPhoneNum1_forgotIDPW" class="title_form">핸드폰 번호</label>
                         <div class="box_form">
-                            <input id="inputPhoneNum_forgotIDPW" type="number" name="phoneNum" placeholder="핸드폰 번호를 입력해주세요." required>
+                            <input id="inputPhoneNum1_forgotIDPW" type="number" name="phoneNum" placeholder="'-'를 제외한 핸드폰 번호를 입력해주세요." required>
                         </div>
-                        <div class="line_form" id="line_phoneNum_form"></div>
-                        <div class="alert_form" id="alert_phoneNum_form"></div>
+                        <div class="line_form" id="line_phoneNum1_form"></div>
+                        <div class="alert_form" id="alert_phoneNum1_form"></div>
                     </div>
                 </div>
                 <div class="rec2_btn_forgotIDPW" id="rec2_btn_findID">
@@ -77,12 +77,12 @@
                         <div class="alert_form" id="alert_id_form"></div>
                     </div>
                     <div class="rec_form_forgotIDPW" id="resultPW2_forgotIDPW">
-                        <label for="inputPhoneNum_forgotIDPW" class="title_form">핸드폰 번호</label>
+                        <label for="inputPhoneNum2_forgotIDPW" class="title_form">핸드폰 번호</label>
                         <div class="box_form">
-                            <input type="number" name="phoneNum" placeholder="휴대폰 번호를 입력해주세요." required>
+                            <input id="inputPhoneNum2_forgotIDPW" type="number" name="phoneNum" placeholder="'-'를 제외한 휴대폰 번호를 입력해주세요." required>
                         </div>
-                        <div class="line_form" id="line_id_form"></div>
-                        <div class="alert_form" id="alert_id_form"></div>
+                        <div class="line_form" id="line_phoneNum2_form"></div>
+                        <div class="alert_form" id="alert_phoneNum2_form"></div>
                     </div>
                 </div>
                 <div class="rec2_btn_forgotIDPW" id="rec2_btn_findPW">
@@ -112,19 +112,22 @@
                 $("#"+tab_id).addClass('current');
             });
             $("#rec2_btn_findID").click(function(){
-                var phoneNum = "phoneNum=" + $("#inputPhoneNum_forgotIDPW").val();
+                var phoneNum = "phoneNum=" + $("#inputPhoneNum1_forgotIDPW").val();
                 $.ajax({
                     type:'POST',
                     url:'http://13.125.138.168:8080/gungduk/api/v1/searchId',
                     data: phoneNum,
                     async:false,
                     success:function(data){
-                        if($("inputPhoneNum_forgotIDPW").val()==""){
-                            alert("입력해주세요.");
+                        if($("#inputPhoneNum1_forgotIDPW").val()==""){
+                            $('#alert_phoneNum1_form').text("번호를 입력해주세요.");
+                            if($("#inputPhoneNum1_forgotIDPW").keydown(function(){
+                                $('#alert_phoneNum1_form').empty();
+                            }));
                         }
                         else{
                             if(data=="error")
-                                alert("존재하지 않는 번호입니다.");
+                                $('#alert_phoneNum1_form').text("존재하지 않는 번호입니다.");
                             else{
                                 $("#resultID_forgotIDPW").remove();
                                 $(".rec1_forgotIDPW").css({
@@ -159,6 +162,7 @@
                     }
                 });
             });
+
             $("#rec2_btn_findPW").click(function(){
                 var userID = "id=" + $("#inputID_forgotIDPW").val();
             
@@ -169,12 +173,32 @@
                     //dataType:"JSON",
                     async:false,
                     success:function(data){
-                        if($("#inputID_forgotIDPW").val()==""){
-                            alert("입력해주세요.");
+                        if($("#inputID_forgotIDPW").val()=="" && $("#inputPhoneNum2_forgotIDPW").val()==""){
+                            $("#alert_id_form").text("ID를 입력해주세요.");
+                            $("#alert_phoneNum2_form").text("번호를 입력해주세요.");
+                            if($("#inputID_forgotIDPW").keydown(function(){
+                            $('#alert_id_form').empty();
+                            }));
+                            if($("#inputPhoneNum2_forgotIDPW").keydown(function(){
+                                $('#alert_phoneNum2_form').empty();
+                            }));
                         }
+                        else if($("#inputID_forgotIDPW").val()==""){
+                            $('#alert_id_form').text('ID를 입력하세요.');
+                            if($("#inputID_forgotIDPW").keydown(function(){
+                                $('#alert_id_form').empty();
+                            }));
+                        }
+                        // else if($("#inputPhoneNum2_forgotIDPW").val()==""){
+                        //     $('#alert_phoneNum2_form').text('번호를 입력해주세요.');
+                        //     if($("#inputPhoneNum2_forgotIDPW").keydown(function(){
+                        //         $('#alert_phoneNum2_form').empty();
+                        //     }));
+                        // }
                         else{
+                            //존재하지 않는 아이디와 존재하지 않는 번호를 나눠서 구현해야함
                             if(data=="error")
-                                alert("존재하지 않는 아이디입니다.");			
+                                $("#alert_id_form").text("존재하지 않는 아이디입니다.");	
                             else{
                                 $("#resultPW1_forgotIDPW").remove();
                                 $("#resultPW2_forgotIDPW").remove();
