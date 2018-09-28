@@ -23,49 +23,155 @@
         }
     </style>
     <title>userInfo</title>
+    <script>
+        //이메일 받아오기
+        var userID = sessionStorage.getItem("id");
+        var userPassword = sessionStorage.getItem("session_pw");
+        //비밀번호 확인하기
+        var checkpw = function(){
+            if(document.getElementById("inputPW_userInfo").value!=""&&document.getElementById("inputCheckPW_userInfo").value!=""){
+                if(document.getElementById("inputPW_userInfo").value==document.getElementById("inputCheckPW_userInfo").value){
+                    document.getElementById("alert_pwC_form").style.color="#5f9ea0";
+                    document.getElementById("alert_pwC_form").innerHTML="비밀번호가 일치합니다.";
+                }else{
+                    document.getElementById("alert_pwC_form").style.color="red";
+                    document.getElementById("alert_pwC_form").innerHTML="비밀번호가 일치하지않습니다.";
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-<div class="wrapper">
-    <div class = "header">
-        <a href="02_mypage.html">
-            <img src="img/ic-back@2x.png" layout="responsive"
-             class="ic_back">
-        </a>
-        <span class="header_title">회원 정보 수정</span>
-    </div>
-    <div class="content">
-        <form>
-            <div class="rec_form">
-                <div class="title_form">ID</div>
-                <div class="box_form"><input type="text" name="id" placeholder="아이디를 입력해주세요."></div>
-                <div class="line_form" id="line_id_form"></div>
-                <div class="alert_form" id="alert_id_form"></div>
+    <div class="wrapper">
+        <div class = "header">
+            <a href="02_mypage.html">
+                <img src="img/ic-back@2x.png" layout="responsive"
+                class="ic_back">
+            </a>
+            <span class="header_title">회원 정보 수정</span>
+        </div>
+        
+        <div class="content">
+            <form>
+                <!-- 서버에서 불러온 id -->
+                <div class="rec_form">
+                    <label class="title_form">ID</label>
+                    <div class="box_form">
+                        <script>
+                            document.write(userID);
+                        </script>
+                    </div>
+                </div>
+                <!-- 비밀번호 -->
+                <div class="rec_form">
+                    <label for="inputPW_userInfo" class="title_form">비밀번호</label>
+                    <div class="box_form">
+                        <input id="inputPW_userInfo" type="password" name="password" placeholder="비밀번호를 입력하세요." onkeyup="checkpw();" required>
+                    </div>
+                    <div class="line_form" id="line_pw_form"></div>
+                    <div class="alert_form" id="alert_pw_form"></div>
+                </div>
+                <!-- 비밀번호 확인 -->
+                <div class="rec_form">
+                    <label for="inputCheckPW_userInfo" class="title_form">비밀번호 확인</label>
+                    <div class="box_form">
+                        <input id="inputCheckPW_userInfo" type="password" name="passwordCheck" placeholder="비밀번호를 다시 입력해주세요." onkeyup="checkpw();" required>
+                    </div>
+                    <div class="line_form" id="line_pwC_form"></div>
+                    <div class="alert_form" id="alert_pwC_form" style="color:red;"></div>
+                </div>
+                <!-- 이메일 주소 -->
+                <div class="rec_form">
+                    <label for="inputEmail_userInfo" class="title_form">이메일 주소</label>
+                    <div class="box_form">
+                        <input id="inputEmail_userInfo" type="text" name="email" placeholder="이메일 주소를 입력해주세요." required>
+                    </div>
+                    <div class="line_form" id="line_email_form"></div>
+                    <div class="alert_form" id="alert_email_form"></div>
+                </div>
+                <!-- 핸드폰 번호 -->
+                <div class="rec_form">
+                    <label for="inputPhoneNum_userInfo" class="title_form">핸드폰 번호</label>
+                    <div class="box_form">
+                        <input id="inputPhoneNum_userInfo" type="text" name="phoneNum" placeholder="핸드폰 번호를 입력해주세요." required>
+                    </div>
+                    <div class="line_form" id="line_num_form"></div>
+                    <div class="alert_form" id="alert_num_form"></div>
+                </div>
+            </form>
+            <div class="rec1_btn_userInfo">
+                <a href="02_mypage.html"><div class="btn_form">
+                    <span class="btn_text_form">수정</span>
+                </div></a>
             </div>
-            <div class="rec_form">
-                <div class="title_form">비밀번호</div>
-                <div class="box_form"><input type="password" name="password" placeholder="비밀번호를 입력해주세요."></div>
-                <div class="line_form" id="line_pw_form"></div>
-                <div class="alert_form" id="alert_pw_form"></div>
-            </div>
-            <div class="rec_form">
-                <div class="title_form">비밀번호 확인</div>
-                <div class="box_form"><input type="password" name="passwordCheck" placeholder="비밀번호를 한 번 더 입력해주세요."></div>
-                <div class="line_form" id="line_pwC_form"></div>
-                <div class="alert_form" id="alert_pwC_form">비밀번호가 일치하지 않습니다.</div>
-            </div>
-            <div class="rec_form">
-                <div class="title_form">핸드폰 번호</div>
-                <div class="box_form"> <input type="text" name="phoneNum" placeholder="핸드폰 번호를 입력해주세요."> </div>
-                <div class="line_form" id="line_num_form"></div>
-                <div class="alert_form" id="alert_num_form"></div>
-            </div>
-        </form>
-        <div class="rec1_btn_userInfo">
-            <a href="02_mypage.html"><div class="btn_form">
-                <span class="btn_text_form">수정</span>
-            </div></a>
         </div>
     </div>
-</div>
+
+    <!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<!--session에 있는 비밀번호 띄워주기-->
+	<script type="text/javascript">	
+      	$(document).ready(function(){
+      		$("#inputPW_userInfo").val(userPassword);
+      	});
+	</script>
+	<!--현재 로그인 되어 있는 user의 비밀번호와 핸드폰 번호 받아오기 -->
+	<script>
+		$(function(){
+			var userID2 = "id=" + sessionStorage.getItem("id"); 
+			$.ajax({
+				type : "POST",
+				url : "http://13.125.138.168:8080/gungduk/api/v1/modifyInfo",
+				data : userID2,
+				async: false,
+				success: function(data){
+					//$("#inputPW_userInfo").val(data[0].pw);
+					$("#inputEmail_userInfo").val(data[0].email)
+					$("#inputPhoneNum_userInfo").val(data[0].phoneNum);
+				},
+				error:function(request, error){
+					con
+					alert("message: "+request.responseText);
+				}
+			});
+		});
+	</script>
+	<!--변경된 비밀번호와 핸드폰 번호를 서버에 전달-->
+	<script>
+		$(function(){
+			$("#btn_changeInfo").click(function(){
+				var userID3 = sessionStorage.getItem("id");
+				var newPW = $("#inputPW_userInfo").val();
+				var newEmail = $("#inputEmail_userInfo").val();
+				var newPhoneNum = $("#inputPhoneNum_userInfo").val();
+
+				$.ajax({
+					type : "POST",
+					url : "http://13.125.138.168:8080/gungduk/api/v1/updateInfo",
+					data : {"id": userID3, "pw": newPW, "email":newEmail, "phoneNum": newPhoneNum},
+					async : false,
+					success : function(data){
+						if($("#inputPW_userInfo").val()==""|| $("#checkinputPW_userInfo").val()=="" || $("#inputPhoneNum_userInfo").val()==""){
+							alert("모든 항목을 입력해주세요.");
+						}else{
+							if(($("#inputPW_userInfo").val() != $("#checkinputPW_userInfo").val())){
+								alert("비밀번호가 일치하지 않습니다.");
+							}else{
+								alert("회원정보가 수정되었습니다.");
+								location.replace("02_mypage.html");
+							}
+						}
+					},
+					error :function(request, error){
+						console.log(error.responseText);
+						 console.log(request.responseText);
+					}
+				});
+			});
+		});
+	</script>
 </body>
 </html>
