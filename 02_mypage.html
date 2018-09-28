@@ -8,90 +8,141 @@
     <title>my page</title>
 </head>
 <body>
-<div class="frame_mypage">
-    <div class = "header">
-        <a href="01_0_main.html">
-            <img src="img/ic-back@2x.png"
-                layout="responsive"
-                class="ic_back">
-        </a>
-        <span class="header_title">마이페이지</span>
-    </div>
-    <div class="content_mypage">
-        <div class="current_status">
-            <div class="img_current_status">
-                <img src="img/ic-level-labor@2x.png"
-                    class="ic_level">
-                <a href="02_mypageLevel.html">
-                    <img src="img/ic-help@2x.png"
-                         class="ic_help">
+    <div class="frame_mypage">
+        <div class = "header">
+            <a href="01_0_main.html">
+                <img src="img/ic-back@2x.png"
+                    layout="responsive"
+                    class="ic_back">
+            </a>
+            <span class="header_title">마이페이지</span>
+        </div>
+        <div class="content_mypage">
+            <div class="current_status">
+                <div class="img_current_status">
+                    <img src="img/ic-level-labor@2x.png"
+                        class="ic_level">
+                    <a href="02_mypageLevel.html">
+                        <img src="img/ic-help@2x.png"
+                            class="ic_help">
+                    </a>
+                </div>
+                <div class="name_current_status">노비</div>
+                <div class="points_current_status">80%</div>
+                <div class="bar_current_status">
+                    <div class="done_current_status"></div>
+                </div>
+            </div>
+            <div class="rec1_mypage">
+                <span class="rec1_title_mypage">달성률</span>
+                <div class="rec2_mypage">
+                    <div class="rec2_title_mypage">경복궁</div>
+                    <div class="rec2_points_mypage" id="gyeongbok_mypage"></div>
+                    <div class="rec2_bar_mypage">
+                        <div class="rec2_doneG_mypage"></div>
+                    </div>
+                </div>
+                <div class="rec2_mypage">
+                    <div class="rec2_title_mypage">창경궁</div>
+                    <div class="rec2_points_mypage" id="changgyeong_mypage"></div>
+                    <div class="rec2_bar_mypage">
+                        <div class="rec2_doneCha_mypage"></div>
+                    </div>
+                </div>
+                <div class="rec2_mypage">
+                    <div class="rec2_title_mypage">덕수궁</div>
+                    <div class="rec2_points_mypage" id="deoksu_mypage"></div>
+                    <div class="rec2_bar_mypage">
+                        <div class="rec2_doneD_mypage"></div>
+                    </div>
+                </div>
+                <div class="rec2_mypage">
+                    <div class="rec2_title_mypage">창덕궁</div>
+                    <div class="rec2_points_mypage" id="changdeok_mypage"></div>
+                    <div class="rec2_bar_mypage">
+                        <div class="rec2_doneCdg_mypage"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="rec3_mypage">
+                <a href="02_2_quest.html" style="width: 0px;">
+                    <div class="rec4_mypage">
+                        <img src="img/ic-quest@2x.png"
+                            class="rec4_ic_mypage">
+                        <span class="rec4_text_mypage">퀘스트 완료 목록 보기</span>
+                        <img src="img/ic-next@2x.png"
+                            class="ic_next">
+                    </div>
+                </a>
+                <a href="checkpassword.html">
+                    <div class="rec4_mypage">
+                        <img src="img/ic-edit@2x.png"
+                            class="rec4_ic_mypage">
+                        <span class="rec4_text_mypage">회원 정보 수정</span>
+                        <img src="img/ic-next@2x.png"
+                            class="ic_next">
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="rec4_mypage" id="logout_mypage">
+                        <img src="img/ic-logout@2x.png"
+                            class="rec4_ic_mypage">
+                        <span class="rec4_text_mypage">로그아웃</span>
+                    </div>
                 </a>
             </div>
-            <div class="name_current_status">노비</div>
-            <div class="points_current_status">80%</div>
-            <div class="bar_current_status">
-                <div class="done_current_status"></div>
-            </div>
-        </div>
-        <div class="rec1_mypage">
-            <span class="rec1_title_mypage">달성률</span>
-            <div class="rec2_mypage">
-                <div class="rec2_title_mypage">경복궁</div>
-                <div class="rec2_points_mypage">80%</div>
-                <div class="rec2_bar_mypage">
-                    <div class="rec2_doneG_mypage"></div>
-                </div>
-            </div>
-            <div class="rec2_mypage">
-                <div class="rec2_title_mypage">창경궁</div>
-                <div class="rec2_points_mypage">50%</div>
-                <div class="rec2_bar_mypage">
-                    <div class="rec2_doneCha_mypage"></div>
-                </div>
-            </div>
-            <div class="rec2_mypage">
-                <div class="rec2_title_mypage">덕수궁</div>
-                <div class="rec2_points_mypage">70%</div>
-                <div class="rec2_bar_mypage">
-                    <div class="rec2_doneD_mypage"></div>
-                </div>
-            </div>
-            <div class="rec2_mypage">
-                <div class="rec2_title_mypage">창덕궁</div>
-                <div class="rec2_points_mypage">20%</div>
-                <div class="rec2_bar_mypage">
-                    <div class="rec2_doneCdg_mypage"></div>
-                </div>
-            </div>
-        </div>
-        <div class="rec3_mypage">
-            <a href="02_2_quest.html" style="width: 0px;">
-                <div class="rec4_mypage">
-                    <img src="img/ic-quest@2x.png"
-                        class="rec4_ic_mypage">
-                    <span class="rec4_text_mypage">퀘스트 완료 목록 보기</span>
-                    <img src="img/ic-next@2x.png"
-                        class="ic_next">
-                </div>
-            </a>
-            <a href="02_1_userInfo.html">
-                <div class="rec4_mypage">
-                    <img src="img/ic-edit@2x.png"
-                        class="rec4_ic_mypage">
-                    <span class="rec4_text_mypage">회원 정보 수정</span>
-                    <img src="img/ic-next@2x.png"
-                        class="ic_next">
-                </div>
-            </a>
-            <a href="#">
-                <div class="rec4_mypage">
-                    <img src="img/ic-logout@2x.png"
-                        class="rec4_ic_mypage">
-                    <span class="rec4_text_mypage">로그아웃</span>
-                </div>
-            </a>
         </div>
     </div>
-</div>
+
+    <!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+     <script>
+      	//달성율 표시 위해 백에 사용자 이메일 넘겨주기 
+      	$(function(){
+      		var userID = "id="+ sessionStorage.getItem("id");
+
+      		$.ajax({
+      			type: "POST",
+      			url: "http://13.125.138.168:8080/gungduk/api/v1/acheive",
+      			data: userID,
+      			async: false,
+      			success: function(data){
+      				$("#gyeongbok_mypage").html(data.gyeongbok+"%");
+      				$("#changgyeong_mypage").html(data.changgyeong+"%");
+      				$("#deoksu_mypage").html(data.deoksu+"%");
+      				$("#changdeok_mypage").html(data.changdeok+"%");
+      			},
+      			error:function(request, error){
+      				console.log(error.responseText);
+						 console.log(request.responseText);
+      			}
+      		});
+      	});
+    </script>
+    <script>
+    //로그아웃 버튼 누르면 로그아웃하고 로그인 페이지로 이동(url과 통신만 되면 로그아웃 됨)
+    $(function(){
+        $("#logout_mypage").click(function(){
+            $.ajax({
+                type :"GET",
+                url: "http://13.125.138.168:8080/gungduk/api/v1/logout",
+                async: false,
+                contentType : "application/json; charset=utf-8",
+                success:function(data){
+                    location.replace("00_1_login.html");
+                    sessionStorage.removeItem("id");//세션에서 이메일 삭제
+                },
+                error:function(request, error){
+                    console.log(error.responseText);
+                        console.log(request.responseText);
+                }
+            });
+        });
+    });
+    </script>
+
 </body>
 </html>
