@@ -49,16 +49,16 @@
                 <div class="rec_form">
                     <label for="inputPW_join" class="title_form">비밀번호</label>
                     <div class="box_form">
-                        <input id="inputPW_join" type="password" name="password" placeholder="비밀번호를 입력해주세요.">
+                        <input id="inputPW_join" type="password" name="password" placeholder="비밀번호를 입력해주세요." required>
                     </div>
                     <div class="line_form" id="line_pw_form"></div>
                     <div class="alert_form" id="alert_pw_form"></div>
                 </div>
                 <!-- 비밀번호 확인 -->
                 <div class="rec_form">
-                    <label for="inputPWcheck_join" class="title_form">비밀번호 확인</label>
+                    <label for="inputCheckPW_join" class="title_form">비밀번호 확인</label>
                     <div class="box_form">
-                        <input id="inputPWcheck_join" type="password" name="passwordCheck" placeholder="비밀번호를 다시 입력해주세요.">
+                        <input id="inputCheckPW_join" type="password" name="passwordCheck" placeholder="비밀번호를 다시 입력해주세요.">
                     </div>
                     <div class="line_form" id="line_pwC_form"></div>
                     <div class="alert_form" id="alert_pwC_form"></div>
@@ -67,7 +67,7 @@
                 <div class="rec_form">
                     <label for="inputPhoneNum_join" class="title_form">핸드폰 번호</label>
                     <div class="box_form">
-                        <input id="inputPhoneNum_join" type="text" name="phoneNum" placeholder="핸드폰 번호를 입력해주세요."/>
+                        <input id="inputPhoneNum_join" type="number" name="phoneNum" placeholder="핸드폰 번호를 입력해주세요." required>
                     </div>
                     <div class="line_form" id="line_num_form"></div>
                     <div class="alert_form" id="alert_num_form"></div>
@@ -76,13 +76,13 @@
                 <div class="rec_form">
                     <label for="inputEmail_join" class="title_form">이메일 주소</label>
                     <div class="box_form">
-                        <input id="inputEmail_join" type="text" name="email" placeholder="이메일 주소를 입력해주세요."/>
+                        <input id="inputEmail_join" type="text" name="email" placeholder="이메일 주소를 입력해주세요." required>
                     </div>
                     <div class="line_form" id="line_email_form"></div>
                     <div class="alert_form" id="alert_email_form"></div>
                 </div>
             </form>
-            <div class="rec1_join">사용 가능한 ID 입니다.</div>
+            <!-- <div class="rec1_join">사용 가능한 ID 입니다.</div> -->
             <div class="rec2_btn_join">
                 <div id="btn_join" class="btn_form">
                     <span class="btn_text_form">가입하기</span>
@@ -100,11 +100,11 @@
         $(function(){
             $(".rec2_btn_join").click(function(){
                 var userID = $("#inputID_join").val();
-                var password = $("#inputPW_join").val();
-                var passwordCheck = $("#inputPW_join").val();
-                var phoneNumber = $("#inputPhoneNum_join").val();
                 var email = $("#inputEmail_join").val();
-                var data = "{\"id\" : \"" + userID + "\", \"password\" : \"" + password + "\", \"passwordCheck\" : \"" + passwordCheck + "\", \"phoneNumber\" : \"" + phoneNumber + "\", \"email\" : \"" + email + "\"}";
+                var password = $("#inputPW_join").val();
+                var phoneNumber = $("#inputPhoneNum_join").val();
+                //data = "{\"id\" : \"" + userID + "\", \"phoneNum\" : \""+phoneNumber+"\", \"pw\" : \""+password+"\"}";
+                data = "{\"id\" : \"" + userID + "\", \"email\" : \""+email+"\", \"phoneNum\" : \""+phoneNumber+"\", \"pw\" : \""+password+"\"}";
 
                 jQuery.ajax({
                     type : "POST",
@@ -128,7 +128,7 @@
                     },
                     error:function(request,error){ 
                         console.log(error.responseText);
-                        console.log(request.responseText);
+                     console.log(request.responseText);
                     }
                 });
             });
