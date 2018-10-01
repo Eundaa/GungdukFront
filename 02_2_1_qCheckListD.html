@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>qListD</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class = "header">
+        <a href="02_2_quest.html">
+            <img src="img/ic-back@2x.png" layout="responsive"
+                class="ic_back">
+        </a>
+        <span class="header_title">퀘스트 완료 목록</span>
+    </div>
+    <div class="content_gray_D">
+        <div class="rec1_questCheck">
+            <div class="rec1_title_questCheck">
+                덕수궁
+            </div>
+            <img src="img/img-deoksuQ@2x.png" class="img_gyeongbokQ">
+        </div>
+        <div class="rec2_questCheck">
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">중화전</div>
+                <div class="rec3_img_questCheck" id="d1">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">중화문</div>
+                <div class="rec3_img_questCheck" id="d2">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">함녕전</div>
+                <div class="rec3_img_questCheck" id="d3">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">석조전</div>
+                <div class="rec3_img_questCheck" id="d4">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">정관헌</div>
+                <div class="rec3_img_questCheck" id="d5">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">석어당</div>
+                <div class="rec3_img_questCheck" id="d6">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">덕홍전</div>
+                <div class="rec3_img_questCheck" id="d7">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">준명당</div>
+                <div class="rec3_img_questCheck" id="d8">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">즉조당</div>
+                <div class="rec3_img_questCheck" id="d9">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">대한문</div>
+                <div class="rec3_img_questCheck" id="d10">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+          $(function(){
+            var userID = sessionStorage.getItem("id");
+            var area = "dsk";
+            $.ajax({
+                    type:"POST",
+                    url:"http://13.125.138.168:8080/gungduk/api/v1/successQst", 
+                    data: {"id": userID, "plcName": area},
+                    async: false, 
+                    success:function(data){
+                        var len = data.length;
+
+                        for(var i=0;i<len;i++){
+                            if(data[i]=="중화전") $("#d1").html("<img align='center' src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                            else if(data[i]=="중화문") $("#d2").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                            else if(data[i]=="함녕전") $("#d3").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                            else if(data[i]=="석조전") $("#d4").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                            else if(data[i]=="정관헌") $("#d5").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                            else if(data[i]=="석어당") $("#d6").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                            else if(data[i]=="덕홍전") $("#d7").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                            else if(data[i]=="준명당") $("#d8").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                            else if(data[i]=="즉조당") $("#d9").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                            else if(data[i]=="대한문") $("#d10").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                        }
+                    },
+                    error:function(request, error){
+                        console.log(error.responseText);
+                        console.log(request.responseText); 
+                    }
+                });
+          });
+      </script>
+
+</body>
+</html>

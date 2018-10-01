@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>qListCdg</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class = "header">
+        <a href="02_2_quest.html">
+            <img src="img/ic-back@2x.png" layout="responsive"
+                class="ic_back">
+        </a>
+        <span class="header_title">퀘스트 완료 목록</span>
+    </div>
+    <div class="content_gray_C">
+        <div class="rec1_questCheck">
+            <div class="rec1_title_questCheck">
+                창덕궁
+            </div>
+            <img src="img/img-changdeokQ@2x.png" class="img_gyeongbokQ">
+        </div>
+        <div class="rec2_questCheck">
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">돈화문</div>
+                <div class="rec3_img_questCheck" id="cdg1">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">금천교</div>
+                <div class="rec3_img_questCheck" id="cdg2">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">인정전</div>
+                <div class="rec3_img_questCheck" id="cdg3">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">선정전</div>
+                <div class="rec3_img_questCheck" id="cdg4">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">희정당</div>
+                <div class="rec3_img_questCheck" id="cdg5">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">대조전</div>
+                <div class="rec3_img_questCheck" id="cdg6">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">낙선재</div>
+                <div class="rec3_img_questCheck" id="cdg7">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">부용정</div>
+                <div class="rec3_img_questCheck" id="cdg8">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">불로문, 애련지</div>
+                <div class="rec3_img_questCheck" id="cdg9">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	  <script>
+		$(function(){
+			var userID = sessionStorage.getItem("id");
+			var area = "cdk";
+			$.ajax({
+					type:"POST",
+					url:"http://13.125.138.168:8080/gungduk/api/v1/successQst",
+					data: {"id": userID, "plcName": area},
+					async: false, 
+					success:function(data){
+						var len = data.length;
+						for(var i=0;i<len;i++){
+							if(data[i]=="돈화문") $("#cdg1)").html("<img align='center' src='img/ic-check-done@2x.png' class='ic_check_done'>");
+							else if(data[i]=="금천교") $("#cdg2").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+							else if(data[i]=="인정전") $("#cdg3").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+							else if(data[i]=="선정전") $("#cdg4").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+							else if(data[i]=="희정당") $("#cdg5").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+							else if(data[i]=="대조전") $("#cdg6").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+							else if(data[i]=="낙선재") $("#cdg7").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+							else if(data[i]=="부용정") $("#cdg8").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+							else if(data[i]=="애련지") $("#cdg9").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+						}
+					},
+					error:function(request, error){
+						 console.log(error.responseText);
+						 console.log(request.responseText);
+					}
+				});
+		});
+	  </script>
+</body>
+</html>
