@@ -10,7 +10,7 @@
 <body>
 <div class="wrapper">
     <div class = "header">
-        <a href="01_0_main.html">
+        <a href="04_1_hpConnectMap.html">
             <img src="img/ic-back@2x.png"
                 layout="responsive"
                 class="ic_back">
@@ -21,13 +21,21 @@
         <div class="rec1_map">
             <img src="img/img-map-gyeongbok.png"
                  id="img_map_gyeongbok">
-
         </div>
-        <a href="01_0_main.html">
-            <div class="rec2_btn_map">
-                <span class="text_map">안내종료</span>
+        <div class="rec2_btns_map">
+            <div class="rec3_btnL_map">
+                <span class="textL_map" onclick="loopData()">위치 확인</span>
             </div>
-        </a>
+            <div class="rec3_btnR_map">
+                <span class="textR_map" onclick="stopData()">위치 중지</span>
+            </div>
+            <a href="04_1_hpConnectMap.html">
+                <div class="rec3_btn_map">
+                    <span class="text_map">안내종료</span>
+                </div>
+            </a>
+        </div>
+        
     </div>
 </div>
 </body>
