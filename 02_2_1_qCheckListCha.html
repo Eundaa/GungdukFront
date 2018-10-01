@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>qListCha</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class = "header">
+        <a href="02_2_quest.html">
+            <img src="img/ic-back@2x.png" layout="responsive"
+                class="ic_back">
+        </a>
+        <span class="header_title">퀘스트 완료 목록</span>
+    </div>
+    <div class="content_gray_C">
+        <div class="rec1_questCheck">
+            <div class="rec1_title_questCheck">
+                창경궁
+            </div>
+            <img src="img/img-changgyeongQ@2x.png" class="img_gyeongbokQ">
+        </div>
+        <div class="rec2_questCheck">
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">홍화문</div>
+                <div class="rec3_img_questCheck" id="cha1">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">옥천교</div>
+                <div class="rec3_img_questCheck" id="cha2">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">명정전 일원</div>
+                <div class="rec3_img_questCheck" id="cha3">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">문정전 일원</div>
+                <div class="rec3_img_questCheck" id="cha4">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">숭문당과 함인정</div>
+                <div class="rec3_img_questCheck" id="cha5">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">통명전과 양화당</div>
+                <div class="rec3_img_questCheck" id="cha6">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">양춘헌과 집복헌</div>
+                <div class="rec3_img_questCheck" id="cha7">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">춘당지</div>
+                <div class="rec3_img_questCheck" id="cha8">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+            <div class="rec3_questCheck">
+                <div class="rec3_title_questCheck">관덕정과 집춘문</div>
+                <div class="rec3_img_questCheck" id="cha9">
+                    <img src="img/ic-check-none@2x.png" class="ic_check_none">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+      $(function(){
+          var userID = sessionStorage.getItem("id");
+          var area = "ckk";
+          $.ajax({
+                  type:"POST",
+                  url:"http://13.125.138.168:8080/gungduk/api/v1/successQst", 
+                  data: {"id": userID, "plcName": area},
+                  async: false, 
+                  success:function(data){
+                      var len = data.length;
+                      
+                      for(var i=0;i<len;i++){
+                          if(data[i]=="홍화문") $("#cha1").html("<img align='center' src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                          else if(data[i]=="옥천교") $("#cha2").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                          else if(data[i]=="명정전") $("#cha3").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                          else if(data[i]=="문정전") $("#cha4").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                          else if(data[i]=="숭문당") $("#cha5").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                          else if(data[i]=="통명전") $("#cha6").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                          else if(data[i]=="영춘헌") $("#cha7").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                          else if(data[i]=="춘당지") $("#cha8").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                          else if(data[i]=="관덕정") $("#cha9").html("<img src='img/ic-check-done@2x.png' class='ic_check_done'>");
+                          }
+                  },
+                  error:function(request, error){
+                       console.log(error.responseText);
+                       console.log(request.responseText);
+                  }
+              });
+      });
+      </script>
+</body>
+</html>
