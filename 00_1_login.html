@@ -130,11 +130,8 @@
                             window.sessionStorage.setItem("id", data);
                             location.replace("01_0_main.html");
                         }
-                        // else if(data == null){
-                        //     alert("회원 정보가 없습니다.");
-                        // }
                         else{
-                            $('.rec4_login').text("회원 정보가 올바르지 않습니다.");
+                            $('.rec4_login').text("ID 또는 비밀번호가 틀렸습니다.");
                         }
                     }
                 },
