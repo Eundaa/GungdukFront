@@ -226,7 +226,6 @@ a{
     margin-top: 1.96vh;
 }
 .done_current_status{
-    width: 61.2vw;
     height: 1.42vh;
     border-radius: 4px;
     background-color: #5f9ea0;
@@ -470,15 +469,42 @@ a{
     text-align: center;
     color: #36797b;
 }
+.rec1_join{
+    width: 72.5vw;
+    height: 2.14vh;
+    margin-left: 13.75vw;
+    /* margin-top: 8.21vh; */
+    font-family: AppleSDGothicNeo;
+    font-size: 0.75em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #5f9ea0;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 12vh;
+}
 .rec2_btn_join{
     width: 92.5vw;
     height: 7.85vh;
     margin-left: 3.75vw;
     margin-top: 1.78vh;
     margin-bottom: 2.14vh;
+    position: absolute;
+    bottom: 0;
 }
 
 /*00_3_forgotIDPW*/
+#html_forgotIDPW { 
+    background: url(../img/splash-bg@2x.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 .navigation {
     width: 100%;
     height: 8vh;
@@ -557,11 +583,16 @@ ul.tabs li.current{
 }
 .rec3_forgotIDPW{
     width: 92.5vw;
-    height: 27.14vh;
-    margin-top: 13vh;
+    height: 13.57vh;
+    margin-top: 18.6vh;
     margin-left: 3.75vw;
 }
-
+.rec4_btn_forgotIDPW{
+    width: 92.5vw;
+    height: 7.85vh;
+    margin-left: 3.75vw;
+    margin-bottom: 2.14vh;
+}
 
 /*01_0_main*/
 #html_main { 
@@ -752,7 +783,7 @@ ul.tabs li.current{
 }
 .rec1_indicatorNm_mainLevel {
     font-family: AppleSDGothicNeo;
-    font-size: 12px;
+    font-size: 1.7vh;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
@@ -761,20 +792,25 @@ ul.tabs li.current{
     text-align: center;
     color: #ffffff;
     position: absolute;
-    bottom: 2.6vh;
-    left: 6.5vw;
+    left: 55%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 24vw;
 }
 .rec1_current1_mainLevel{
     width: 24vw;
     height: 7.5vh;
+    position: relative;
 }
 .rec1_current2_mainLevel{
     width: 24vw;
     height: 7.5vh;
+    position: relative;
 }
 .rec1_current3_mainLevel{
     width: 24vw;
     height: 7.5vh;
+    position: relative;
 }
 .rec1_current4_mainLevel{
     width: 24vw;
@@ -784,6 +820,7 @@ ul.tabs li.current{
 .rec1_current5_mainLevel{
     width: 24vw;
     height: 7.5vh;
+    position: relative;
 }
 .rec2_mainLevel{
     width: 3.1vw;
@@ -1006,25 +1043,21 @@ ul.tabs li.current{
     position: absolute;
 }
 .rec2_doneG_mypage{
-    width: 69.37vw;
     height: 1.07vh;
     border-radius: 3px;
     background-color: #5f9ea0;
 }
 .rec2_doneCha_mypage{
-    width: 47.5vw;
     height: 1.07vh;
     border-radius: 3px;
     background-color: #5f9ea0;
 }
 .rec2_doneD_mypage{
-    width: 63.12vw;
     height: 1.07vh;
     border-radius: 3px;
     background-color: #5f9ea0;
 }
 .rec2_doneCdg_mypage{
-    width: 19.37vw;
     height: 1.07vh;
     border-radius: 3px;
     background-color: #5f9ea0;
@@ -1069,7 +1102,22 @@ ul.tabs li.current{
 }
 
 /*02_1_uesrInfo*/
-.rec1_btn_userInfo{
+.rec1_userInfo{
+    width: 72.5vw;
+    height: 2.14vh;
+    margin-left: 13.75vw;
+    margin-top: 8.21vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.75em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    /* color: #36797b; */
+}
+.rec2_btn_userInfo{
     width: 92.5vw;
     height: 7.85vh;
     margin-left: 3.75vw;
