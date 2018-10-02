@@ -44,7 +44,8 @@
                     <div class="box_form">
                         <script>
                             document.write("<p class ='font-weight-bold'>"+ userID+"</p>");
-                        </script>                    </div>
+                        </script>                    
+                        </div>
                     <!-- <div class="line_form" id="line_id_form"></div>
                     <div class="alert_form" id="alert_id_form"></div> -->
                 </div>
@@ -92,9 +93,19 @@
                     async : false,
                     contentType : "application/json; charset=UTF-8",
                     success:function(data){
+                        if( userPW == ""){
+                            $("#alert_pw_form").text('비밀번호를 입력하세요.');
+                                if($("#inputPW_checkPW").keydown(function(){
+                                    $('#alert_pw_form').empty();
+                                }));
+                        }
                         //비밀번호가 일치하지 않을 경우, -1을 받음
-                        if(data == -1){
-                            alert("비밀번호가 일치하지 않습니다.");
+                        else if(data == -1){
+                            $("#alert_pw_form").text('비밀번호가 일치하지 않습니다.');
+                                if($("#inputPW_checkPW").keydown(function(){
+                                    $('#alert_pw_form').empty();
+                                }));
+                            //alert("비밀번호가 일치하지 않습니다.");
                         }
                         else{
                             //일치할 경우, 세션에 저장하고 changeInfo.html로 이동 
