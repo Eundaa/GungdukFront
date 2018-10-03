@@ -27,7 +27,7 @@
 <body>
     <div class="wrapper">
         <div class = "header">
-            <a href="00_1_login.html">
+            <a href="javascript:history.back();">
                 <img src="img/ic-back@2x.png"
                     layout="responsive"
                     class="ic_back">
@@ -150,42 +150,44 @@
                             }
                         } 
                         // 아이디가 중복된 경우
-                        if ( data == -1 ){
+                        else if ( data == -1 ){
                             $("#alert_id_form").text('이미 존재하는 아이디입니다.');
                                 if($("#inputID_join").keydown(function(){
                                     $('#alert_id_form').empty();
                                 }));
                         } 
                         // 회원가입 성공 여부 (비번 확인)
-                        if ( data == 1 ){
+                        else if ( data == 1 ){
+                            $(".rec1_join").text('회원가입 되었습니다.');
+                            $(".rec2_btn_join").remove();
+                            $(".rec3_btn_join").css({
+                                'width': '92.5vw',
+                                'height': '7.85vh',
+                                'border-radius': '8px',
+                                'background-color': '#5f9ea0',
+                                'margin-left': '3.75vw',
+                                'text-align': 'center',
+                                'margin-top': '1.78vh',
+                                'margin-bottom': '2.14vh',
+                                'position': 'absolute',
+                                'bottom': '0'
+                            })
+                            $(".rec3_btn_join").append("<span style='height: 7.85vh;font-size: 0.875em;font-weight: bold;font-style: normal;font-stretch: normal;letter-spacing: -0.5px;color: #ffffff;line-height: 7.85vh;'>로그인 페이지로 이동</span>");
+                        } else {
                             if ( password != passwordCheck){
-                                $("#alert_pwC_form").text('비밀번호가 일치하지 않습니다.');
-                                if($("#inputCheckPW_join").keydown(function(){
-                                    $('#alert_pwC_form').empty();
-                                }));
-                            } else if (!email.match(exptext)) {
+                            $("#alert_pwC_form").text('비밀번호가 일치하지 않습니다.');
+                            if($("#inputCheckPW_join").keydown(function(){
+                                $('#alert_pwC_form').empty();
+                            }));
+                            } 
+                            if (!email.match(exptext)) {
                                 $("#alert_email_form").text("이메일 형식이 올바르지 않습니다.");
                                 if($("#inputEmail_join").keydown(function(){
                                     $('#alert_email_form').empty();
                                 }));
-                            } else {
-                                $(".rec1_join").text('회원가입 되었습니다.');
-                                $(".rec2_btn_join").remove();
-                                $(".rec3_btn_join").css({
-                                    'width': '92.5vw',
-                                    'height': '7.85vh',
-                                    'border-radius': '8px',
-                                    'background-color': '#5f9ea0',
-                                    'margin-left': '3.75vw',
-                                    'text-align': 'center',
-                                    'margin-top': '1.78vh',
-                                    'margin-bottom': '2.14vh',
-                                    'position': 'absolute',
-                                    'bottom': '0'
-                                })
-                                $(".rec3_btn_join").append("<span style='height: 7.85vh;font-size: 0.875em;font-weight: bold;font-style: normal;font-stretch: normal;letter-spacing: -0.5px;color: #ffffff;line-height: 7.85vh;'>로그인 페이지로 이동</span>");
                             }
                         }
+                        
 
                         // if(data==1){
                         //     alert("회원가입 성공");
