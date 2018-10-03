@@ -93,6 +93,21 @@
             var userID = $("#inputID_login").val();
             var password = $("#inputPW_login").val();
             data = "{\"id\" : \"" + userID + "\", \"pw\" : \"" +  password + "\"}";
+            
+            if($("#inputID_login").val()=="" || $("#inputPW_login").val()==""){
+                if($("#inputID_login").val()==""){
+                    $('#alert_id_form').text('ID를 입력하세요.');
+                    if($("#inputID_login").keydown(function(){
+                        $('#alert_id_form').empty();
+                    }));
+                }
+                if($("#inputPW_login").val()==""){
+                    $('#alert_pw_form').text('비밀번호를 입력하세요.');
+                    if($("#inputPW_login").keydown(function(){
+                        $('#alert_pw_form').empty();
+                    }));
+                }
+            }
 
             $.ajax({
                 type : "POST",
@@ -102,37 +117,12 @@
                 async:false,
                 contentType : "application/json; charset=UTF-8",
                 success:function(data){
-                    if($("#inputID_login").val()==""&& $("#inputPW_login").val()==""){
-                        $('#alert_id_form').text('ID를 입력하세요.');
-                        $('#alert_pw_form').text('비밀번호를 입력하세요.');
-                        if($("#inputID_login").keydown(function(){
-                            $('#alert_id_form').empty();
-                        }));
-                        if($("#inputPW_login").keydown(function(){
-                            $('#alert_pw_form').empty();
-                        }));
-
-                    }
-                    else if($("#inputID_login").val()==""){
-                        $('#alert_id_form').text('ID를 입력하세요.');
-                        if($("#inputID_login").keydown(function(){
-                            $('#alert_id_form').empty();
-                        }));
-                    }
-                    else if($("#inputPW_login").val()==""){
-                        $('#alert_pw_form').text('비밀번호를 입력하세요.');
-                        if($("#inputPW_login").keydown(function(){
-                            $('#alert_pw_form').empty();
-                        }));
+                    if(data != 'fail'){
+                        window.sessionStorage.setItem("id", data);
+                        location.replace("01_0_main.html");
                     }
                     else{
-                        if(data != 'fail'){
-                            window.sessionStorage.setItem("id", data);
-                            location.replace("01_0_main.html");
-                        }
-                        else{
-                            $('.rec4_login').text("ID 또는 비밀번호가 틀렸습니다.");
-                        }
+                        $('.rec4_login').text("ID 또는 비밀번호가 틀렸습니다.");
                     }
                 },
                 error:function(request, error){
