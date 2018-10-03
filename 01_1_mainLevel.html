@@ -19,15 +19,11 @@
         </div>
         <div class="result_popUp">
             <div class="rec1_mainLevel">
-                <div class="rec1_current1_mainLevel"></div>
-                <div class="rec1_current2_mainLevel"></div>
-                <div class="rec1_current3_mainLevel"></div>
-                <div class="rec1_current4_mainLevel">
-                    <img src="img/indicator-box@2x.png"
-                         class="indicator_box">
-                    <div class="rec1_indicatorNm_mainLevel">현재 계급</div>
-                </div>
                 <div class="rec1_current5_mainLevel"></div>
+                <div class="rec1_current4_mainLevel"></div>
+                <div class="rec1_current3_mainLevel"></div>
+                <div class="rec1_current2_mainLevel"></div>
+                <div class="rec1_current1_mainLevel"></div>
             </div>
             <div class="rec2_mainLevel">
                 <img src="img/upLine.png"
@@ -83,5 +79,37 @@
         </a>
     </div>
 </div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+//달성율 표시 위해 백에 사용자 이메일 넘겨주기 
+$(function(){
+    var userID = "id="+ sessionStorage.getItem("id");
+    
+    $.ajax({
+    type: "POST",
+    url: "http://13.125.138.168:8080/gungduk/api/v1/finishQuest",
+    data: userID,
+    async: false,
+    success: function(data){
+        //계급 이름, 사진 변경과 퍼센테이지 변경
+        if ( data.level == 1 ){
+            $(".rec1_current1_mainLevel").append("<img src='img/indicator-box@2x.png' class='indicator_box'><div class='rec1_indicatorNm_mainLevel'>현재 계급</div>");
+        } else if ( data.level == 2 ){
+            $(".rec1_current2_mainLevel").append("<img src='img/indicator-box@2x.png' class='indicator_box'><div class='rec1_indicatorNm_mainLevel'>현재 계급</div>");
+        } else if ( data.level == 3 ){
+            $(".rec1_current3_mainLevel").append("<img src='img/indicator-box@2x.png' class='indicator_box'><div class='rec1_indicatorNm_mainLevel'>현재 계급</div>");
+        } else if ( data.level == 4 ){
+            $(".rec1_current4_mainLevel").append("<img src='img/indicator-box@2x.png' class='indicator_box'><div class='rec1_indicatorNm_mainLevel'>현재 계급</div>");
+        } else if ( data.level == 5 ){
+            $(".rec1_current5_mainLevel").append("<img src='img/indicator-box@2x.png' class='indicator_box'><div class='rec1_indicatorNm_mainLevel'>현재 계급</div>");
+        }
+    }});
+});
+</script>
 </body>
 </html>

@@ -2,10 +2,10 @@
 <html lang="en" id="html_main">
 <head>
     <!-- Required meta tags -->
+    <title>main</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>main</title>
 </head>
 <body>
 <div class="wrapper">
@@ -33,15 +33,11 @@
         <div class="rec2_status_main">
             <div class="current_status">
                 <div class="img_current_status">
-                    <img src="img/ic-level-labor@2x.png"
-                        class="ic_level">
-                    <a href="01_1_mainLevel.html">
-                        <img src="img/ic-help@2x.png"
-                        class="ic_help">
-                    </a>
+                    <img class="ic_level">
+                    <a href="01_1_mainLevel.html"><img src="img/ic-help@2x.png" class="ic_help"></a>
                 </div>
-                <div class="name_current_status">노비</div>
-                <div class="points_current_status">80%</div>
+                <div class="name_current_status"></div>
+                <div class="points_current_status"></div>
                 <div class="bar_current_status">
                     <div class="done_current_status"></div>
                 </div>
@@ -85,103 +81,152 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
     var apiURI = "http://api.openweathermap.org/data/2.5/weather?lat=37.58&lon=126.98&appid=cd9c8e6ad0836b458374b0a5a9237b62";
+    var userID = "id="+ sessionStorage.getItem("id");
     
-        $.ajax({
-            url: apiURI,
-            dataType: "json",
-            type: "GET",
-            async: "false",
-            success: function(resp) {
-                $('.rec1_local_main').text( resp.name+', '+resp.sys.country);
-                $('.rec1_temp_main').text(Math.round(resp.main.temp- 273.15)+'ºC');
-                if(resp.weather[0].id == 800){ // 화창한날
-                    var imgURL = "img/svg/wi-day-sunny.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("오늘은 산책하기 좋은 날씨네요.");
-                } else if(resp.weather[0].id == 200 || resp.weather[0].id == 201 || resp.weather[0].id == 202 || resp.weather[0].id == 230 || resp.weather[0].id == 231 || resp.weather[0].id == 232){
-                    //뇌우
-                    var imgURL = "img/svg/wi-thunderstorm.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("우산이나 우비를 챙겨주세요~!");
-                } else if(resp.weather[0].id == 210 || resp.weather[0].id == 211 || resp.weather[0].id == 212 || resp.weather[0].id == 221){
-                    //번개
-                    var imgURL = "img/svg/wi-lightning.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("우산이나 우비를 챙겨주세요~!");
-                } else if(resp.weather[0].id == 300 || resp.weather[0].id == 301 || resp.weather[0].id == 321 || resp.weather[0].id == 500){
-                    //보슬비
-                    var imgURL = "img/svg/wi-sprinkle.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("우산이나 우비를 챙겨주세요~!");
-                } else if(resp.weather[0].id == 302 || resp.weather[0].id == 311 || resp.weather[0].id == 312 || resp.weather[0].id == 314 || resp.weather[0].id == 501 || resp.weather[0].id == 502 || resp.weather[0].id == 503 || resp.weather[0].id == 504){
-                    //비
-                    var imgURL = "img/svg/wi-rain.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("우산이나 우비를 챙겨주세요~!");
-                } else if(resp.weather[0].id == 310 || resp.weather[0].id == 511 || resp.weather[0].id == 611 || resp.weather[0].id == 612 || resp.weather[0].id == 615 || resp.weather[0].id == 616 || resp.weather[0].id == 620){
-                    //비-mix
-                    var imgURL = "img/svg/wi-rain-mix.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("우산이나 우비를 챙겨주세요~!");
-                } else if(resp.weather[0].id == 313 || resp.weather[0].id == 520 || resp.weather[0].id == 521 || resp.weather[0].id == 522 || resp.weather[0].id == 701){
-                    //소나기
-                    var imgURL = "img/svg/wi-showers.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("우산이나 우비를 챙겨주세요~!");
-                } else if(resp.weather[0].id == 531 || resp.weather[0].id == 901){
-                    //폭풍우
-                    var imgURL = "img/svg/wi-storm-showers.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("우산이나 우비를 챙겨주세요~!");
-                } else if(resp.weather[0].id == 600 || resp.weather[0].id == 601 || resp.weather[0].id == 621 || resp.weather[0].id == 622){
-                    //눈
-                    var imgURL = "img/svg/wi-snow.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("미끄러지지 않게 주의하세요.");
-                } else if(resp.weather[0].id == 602){
-                    //진눈깨비
-                    var imgURL = "img/svg/wi-sleet.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("갑자기 눈이 내릴지도 몰라요.");
-                } else if(resp.weather[0].id == 721){
-                    //낮안개
-                    var imgURL = "img/svg/wi-day-haze.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("산책하기 괜찮은 날씨네요.");
-                } else if(resp.weather[0].id == 731 || resp.weather[0].id == 761 || resp.weather[0].id == 762){
-                    //미세먼지
-                    var imgURL = "img/svg/wi-dust.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("마스크를 꼭 챙기세요.");
-                } else if(resp.weather[0].id == 741){
-                    //안개
-                    var imgURL = "img/svg/wi-fog.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("오늘은 천천히 걸어볼까요?");
-                } else if(resp.weather[0].id == 771 || resp.weather[0].id == 801 || resp.weather[0].id == 802 || resp.weather[0].id == 803){
-                    //구름, 돌풍
-                    var imgURL = "img/svg/wi-cloudy-gusts.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("산책하기 알맞은 날씨네요.");
-                } else if(resp.weather[0].id == 804){
-                    //흐린 날
-                    var imgURL = "img/svg/wi-cloudy.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("오늘은 천천히 걸어볼까요?");
-                } else if(resp.weather[0].id == 903){
-                    //눈송이
-                    var imgURL = "img/svg/wi-snowflake-cold.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("함박눈이 내려요.");
-                } else if(resp.weather[0].id == 904){
-                    //폭염
-                    var imgURL = "img/svg/wi-hot.svg";
-                    $(".sun").attr("src", imgURL);
-                    $(".rec1_word_main").text("시원한 물 챙기는 거 잊지마세요.");
-                } 
-                
-            }
-        })
+    //날씨 ajax
+    $.ajax({
+        url: apiURI,
+        dataType: "json",
+        type: "GET",
+        async: "false",
+        success: function(resp) {
+            $('.rec1_local_main').text( resp.name+', '+resp.sys.country);
+            $('.rec1_temp_main').text(Math.round(resp.main.temp- 273.15)+'ºC');
+            if(resp.weather[0].id == 800){ // 화창한날
+                var imgURL = "img/svg/wi-day-sunny.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("오늘은 산책하기 좋은 날씨네요.");
+            } else if(resp.weather[0].id == 200 || resp.weather[0].id == 201 || resp.weather[0].id == 202 || resp.weather[0].id == 230 || resp.weather[0].id == 231 || resp.weather[0].id == 232){
+                //뇌우
+                var imgURL = "img/svg/wi-thunderstorm.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("우산이나 우비를 챙겨주세요~!");
+            } else if(resp.weather[0].id == 210 || resp.weather[0].id == 211 || resp.weather[0].id == 212 || resp.weather[0].id == 221){
+                //번개
+                var imgURL = "img/svg/wi-lightning.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("우산이나 우비를 챙겨주세요~!");
+            } else if(resp.weather[0].id == 300 || resp.weather[0].id == 301 || resp.weather[0].id == 321 || resp.weather[0].id == 500){
+                //보슬비
+                var imgURL = "img/svg/wi-sprinkle.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("우산이나 우비를 챙겨주세요~!");
+            } else if(resp.weather[0].id == 302 || resp.weather[0].id == 311 || resp.weather[0].id == 312 || resp.weather[0].id == 314 || resp.weather[0].id == 501 || resp.weather[0].id == 502 || resp.weather[0].id == 503 || resp.weather[0].id == 504){
+                //비
+                var imgURL = "img/svg/wi-rain.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("우산이나 우비를 챙겨주세요~!");
+            } else if(resp.weather[0].id == 310 || resp.weather[0].id == 511 || resp.weather[0].id == 611 || resp.weather[0].id == 612 || resp.weather[0].id == 615 || resp.weather[0].id == 616 || resp.weather[0].id == 620){
+                //비-mix
+                var imgURL = "img/svg/wi-rain-mix.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("우산이나 우비를 챙겨주세요~!");
+            } else if(resp.weather[0].id == 313 || resp.weather[0].id == 520 || resp.weather[0].id == 521 || resp.weather[0].id == 522 || resp.weather[0].id == 701){
+                //소나기
+                var imgURL = "img/svg/wi-showers.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("우산이나 우비를 챙겨주세요~!");
+            } else if(resp.weather[0].id == 531 || resp.weather[0].id == 901){
+                //폭풍우
+                var imgURL = "img/svg/wi-storm-showers.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("우산이나 우비를 챙겨주세요~!");
+            } else if(resp.weather[0].id == 600 || resp.weather[0].id == 601 || resp.weather[0].id == 621 || resp.weather[0].id == 622){
+                //눈
+                var imgURL = "img/svg/wi-snow.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("미끄러지지 않게 주의하세요.");
+            } else if(resp.weather[0].id == 602){
+                //진눈깨비
+                var imgURL = "img/svg/wi-sleet.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("갑자기 눈이 내릴지도 몰라요.");
+            } else if(resp.weather[0].id == 721){
+                //낮안개
+                var imgURL = "img/svg/wi-day-haze.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("산책하기 괜찮은 날씨네요.");
+            } else if(resp.weather[0].id == 731 || resp.weather[0].id == 761 || resp.weather[0].id == 762){
+                //미세먼지
+                var imgURL = "img/svg/wi-dust.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("마스크를 꼭 챙기세요.");
+            } else if(resp.weather[0].id == 741){
+                //안개
+                var imgURL = "img/svg/wi-fog.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("오늘은 천천히 걸어볼까요?");
+            } else if(resp.weather[0].id == 771 || resp.weather[0].id == 801 || resp.weather[0].id == 802 || resp.weather[0].id == 803){
+                //구름, 돌풍
+                var imgURL = "img/svg/wi-cloudy-gusts.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("산책하기 알맞은 날씨네요.");
+            } else if(resp.weather[0].id == 804){
+                //흐린 날
+                var imgURL = "img/svg/wi-cloudy.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("오늘은 천천히 걸어볼까요?");
+            } else if(resp.weather[0].id == 903){
+                //눈송이
+                var imgURL = "img/svg/wi-snowflake-cold.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("함박눈이 내려요.");
+            } else if(resp.weather[0].id == 904){
+                //폭염
+                var imgURL = "img/svg/wi-hot.svg";
+                $(".sun").attr("src", imgURL);
+                $(".rec1_word_main").text("시원한 물 챙기는 거 잊지마세요.");
+            } 
+            
+        }
+    });
+
+    //계급 ajax
+    $.ajax({
+    type: "POST",
+    url: "http://13.125.138.168:8080/gungduk/api/v1/finishQuest",
+    data: userID,
+    async: false,
+    success: function(data){
+        //계급 이름, 사진 변경과 퍼센테이지 변경
+        if ( data.level == 1 ){
+            $(".ic_level").attr('src','img/ic-level-labor@2x.png');
+            $(".name_current_status").text("노비");
+            $(".points_current_status").text(data.percent + "%");
+            $(".done_current_status").css({
+                'width': data.percent + "%"
+            });
+        } else if ( data.level == 2 ){
+            $(".ic_level").attr('src','img/ic-level-civilian@2x.png');
+            $(".name_current_status").text("평민");
+            $(".points_current_status").text(data.percent + "%");
+            $(".done_current_status").css({
+                'width': data.percent + "%"
+            });
+        } else if ( data.level == 3 ){
+            $(".ic_level").attr('src','img/ic-level-general@2x.png');
+            $(".name_current_status").text("관리");
+            $(".points_current_status").text(data.percent + "%");
+            $(".done_current_status").css({
+                'width': data.percent + "%"
+            });
+        } else if ( data.level == 4 ){
+            $(".ic_level").attr('src','img/ic-level-gentleman@2x.png');
+            $(".name_current_status").text("양반");
+            $(".points_current_status").text(data.percent + "%");
+            $(".done_current_status").css({
+                'width': data.percent + "%"
+            });
+        } else if ( data.level == 5 ){
+            $(".ic_level").attr('src','img/ic-level-king@2x.png');
+            $(".name_current_status").text("왕");
+            $(".points_current_status").text(data.percent + "%");
+            $(".done_current_status").css({
+                'width': data.percent + "%"
+            });
+        }
+        
+    }});
 </script>
 </body>
 </html>

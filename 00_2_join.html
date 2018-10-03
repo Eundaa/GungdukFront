@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <!-- Required meta tags -->
+    <title>join</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -22,7 +23,6 @@
             color: #e4e4e4;
         }
     </style>
-    <title>join</title>
 </head>
 <body>
     <div class="wrapper">
@@ -40,7 +40,7 @@
                 <div class="rec_form">
                     <label for="inputID_join" class="title_form">ID</label>
                     <div class="box_form">
-                        <input id="inputID_join" type="text" name="id" placeholder="아이디를 입력해주세요." required>
+                        <input id="inputID_join" type="text" name="id" placeholder="아이디를 입력하세요." required>
                     </div>
                     <div class="line_form" id="line_id_form"></div>
                     <div class="alert_form" id="alert_id_form"></div>
@@ -49,7 +49,7 @@
                 <div class="rec_form">
                     <label for="inputPW_join" class="title_form">비밀번호</label>
                     <div class="box_form">
-                        <input id="inputPW_join" type="password" name="password" placeholder="비밀번호를 입력해주세요." required>
+                        <input id="inputPW_join" type="password" name="password" placeholder="비밀번호를 입력하세요." required>
                     </div>
                     <div class="line_form" id="line_pw_form"></div>
                     <div class="alert_form" id="alert_pw_form"></div>
@@ -58,7 +58,7 @@
                 <div class="rec_form">
                     <label for="inputCheckPW_join" class="title_form">비밀번호 확인</label>
                     <div class="box_form">
-                        <input id="inputCheckPW_join" type="password" name="passwordCheck" placeholder="비밀번호를 다시 입력해주세요.">
+                        <input id="inputCheckPW_join" type="password" name="passwordCheck" placeholder="비밀번호를 다시 입력하세요." required>
                     </div>
                     <div class="line_form" id="line_pwC_form"></div>
                     <div class="alert_form" id="alert_pwC_form"></div>
@@ -67,7 +67,7 @@
                 <div class="rec_form">
                     <label for="inputPhoneNum_join" class="title_form">핸드폰 번호</label>
                     <div class="box_form">
-                        <input id="inputPhoneNum_join" type="number" name="phoneNum" placeholder="핸드폰 번호를 입력해주세요." required>
+                        <input id="inputPhoneNum_join" type="number" name="phoneNum" placeholder="핸드폰 번호를 입력하세요.(숫자만 입력)" required>
                     </div>
                     <div class="line_form" id="line_num_form"></div>
                     <div class="alert_form" id="alert_num_form"></div>
@@ -76,18 +76,19 @@
                 <div class="rec_form">
                     <label for="inputEmail_join" class="title_form">이메일 주소</label>
                     <div class="box_form">
-                        <input id="inputEmail_join" type="text" name="email" placeholder="이메일 주소를 입력해주세요." required>
+                        <input id="inputEmail_join" type="email" name="email" placeholder="이메일 주소를 입력하세요." value onsubmit="emailCheck();" required>
                     </div>
                     <div class="line_form" id="line_email_form"></div>
                     <div class="alert_form" id="alert_email_form"></div>
                 </div>
             </form>
-            <!-- <div class="rec1_join">사용 가능한 ID 입니다.</div> -->
+            <div class="rec1_join"></div>
             <div class="rec2_btn_join">
                 <div id="btn_join" class="btn_form">
                     <span class="btn_text_form">가입하기</span>
                 </div>
             </div>
+            <a href="00_1_login.html"><div class="rec3_btn_join"></div></a>
         </div>
     </div>
 
@@ -99,10 +100,12 @@
     <script>
         $(function(){
             $(".rec2_btn_join").click(function(){
+                var exptext = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
                 var userID = $("#inputID_join").val();
-                var email = $("#inputEmail_join").val();
                 var password = $("#inputPW_join").val();
+                var passwordCheck = $("#inputCheckPW_join").val();
                 var phoneNumber = $("#inputPhoneNum_join").val();
+                var email = $("#inputEmail_join").val();
                 //data = "{\"id\" : \"" + userID + "\", \"phoneNum\" : \""+phoneNumber+"\", \"pw\" : \""+password+"\"}";
                 data = "{\"id\" : \"" + userID + "\", \"email\" : \""+email+"\", \"phoneNum\" : \""+phoneNumber+"\", \"pw\" : \""+password+"\"}";
 
@@ -113,22 +116,93 @@
                     async:false,
                     contentType : "application/json; charset=UTF-8",
                     success:function(data){
-                            if(data==1){
-                                alert("회원가입 성공");
-                                location.replace("00_1_login.html");
+                        // 입력 안 된 값이 있는 경우
+                        if ( data == 2) {
+                            if ( userID == ""){
+                                $("#alert_id_form").text('ID를 입력하세요.');
+                                if($("#inputID_join").keydown(function(){
+                                    $('#alert_id_form').empty();
+                                }));
+                            } 
+                            if ( email == "" ){
+                                $("#alert_email_form").text('이메일 주소를 입력하세요.');
+                                if($("#inputEmail_join").keydown(function(){
+                                    $('#alert_email_form').empty();
+                                }));
+                            } 
+                            if ( password == "" ){
+                                $("#alert_pw_form").text('비밀번호를 입력하세요.');
+                                if($("#inputPW_join").keydown(function(){
+                                    $('#alert_pw_form').empty();
+                                }));
+                            } 
+                            if ( passwordCheck == "" ){
+                                $("#alert_pwC_form").text('비밀번호 확인을 입력하세요.');
+                                if($("#inputCheckPW_join").keydown(function(){
+                                    $('#alert_pwC_form').empty();
+                                }));
+                            } 
+                            if ( phoneNumber == "" ){
+                                $("#alert_num_form").text('핸드폰 번호를 입력하세요.');
+                                if($("#inputPhoneNum_join").keydown(function(){
+                                    $('#alert_num_form').empty();
+                                }));
                             }
-                            else if(data==-1)
-                                alert("이미 존재하는 아이디입니다.");
-                            else if(data==2){
-                                alert("모두 입력해주세요");
+                        } 
+                        // 아이디가 중복된 경우
+                        if ( data == -1 ){
+                            $("#alert_id_form").text('이미 존재하는 아이디입니다.');
+                                if($("#inputID_join").keydown(function(){
+                                    $('#alert_id_form').empty();
+                                }));
+                        } 
+                        // 회원가입 성공 여부 (비번 확인)
+                        if ( data == 1 ){
+                            if ( password != passwordCheck){
+                                $("#alert_pwC_form").text('비밀번호가 일치하지 않습니다.');
+                                if($("#inputCheckPW_join").keydown(function(){
+                                    $('#alert_pwC_form').empty();
+                                }));
+                            } else if (!email.match(exptext)) {
+                                $("#alert_email_form").text("이메일 형식이 올바르지 않습니다.");
+                                if($("#inputEmail_join").keydown(function(){
+                                    $('#alert_email_form').empty();
+                                }));
+                            } else {
+                                $(".rec1_join").text('회원가입 되었습니다.');
+                                $(".rec2_btn_join").remove();
+                                $(".rec3_btn_join").css({
+                                    'width': '92.5vw',
+                                    'height': '7.85vh',
+                                    'border-radius': '8px',
+                                    'background-color': '#5f9ea0',
+                                    'margin-left': '3.75vw',
+                                    'text-align': 'center',
+                                    'margin-top': '1.78vh',
+                                    'margin-bottom': '2.14vh',
+                                    'position': 'absolute',
+                                    'bottom': '0'
+                                })
+                                $(".rec3_btn_join").append("<span style='height: 7.85vh;font-size: 0.875em;font-weight: bold;font-style: normal;font-stretch: normal;letter-spacing: -0.5px;color: #ffffff;line-height: 7.85vh;'>로그인 페이지로 이동</span>");
                             }
-                            else{
-                                alert("기입된 정보가 올바르지 않습니다.");
-                            }
+                        }
+
+                        // if(data==1){
+                        //     alert("회원가입 성공");
+                        //     location.replace("00_1_login.html");
+                        // }
+                        // else if(data==-1)
+                        //     alert("이미 존재하는 아이디입니다.");
+                        // else if(data==2){
+                        //     alert("모두 입력하세요");
+                        // }
+                        // else{
+                        //     alert("기입된 정보가 올바르지 않습니다.");
+                        // }
                     },
                     error:function(request,error){ 
                         console.log(error.responseText);
-                     console.log(request.responseText);
+                        console.log(request.responseText);
                     }
                 });
             });
