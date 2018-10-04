@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <!-- Required meta tags -->
+    <title>login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -22,7 +23,12 @@
             color: #e4e4e4;
         }
     </style>
-    <title>login</title>
+    <script>
+        history.pushState(null, document.title, location.href); 
+        window.addEventListener('popstate', function(event) { 
+            history.pushState(null, document.title, location.href); 
+        });
+    </script>
 </head>
 <body>
     <div class="wrapper">
