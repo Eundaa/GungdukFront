@@ -305,6 +305,15 @@ a{
     width: 7.5vw;
     height: 4.28vh;
 }
+/* popup */
+#levelLayout {
+    z-index: 999;
+    display: none;
+    width: 100%;
+    height: 90%;
+    background: none rgba(0,0,0,0.5);
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#80000000', endColorstr='#80000000');
+}
 
 /*00_0_splash*/
 #html_splash { 
@@ -595,17 +604,21 @@ ul.tabs li.current{
 }
 
 /*01_0_main*/
-#html_main { 
+/* #html_main { 
     background: url(../img/mainimg.jpg) no-repeat top; 
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size: contain;
-}
+} */
 .header_main{
     width: 100%;
     height: 33.92vh;
     position: relative;
+}
+.mainimg{
+    width: 100%;
+    position: absolute;
 }
 .imgGra_main{
     width: 100%;
@@ -619,17 +632,21 @@ ul.tabs li.current{
     margin-top: 2.5vh;
     object-fit: contain;
     position: absolute;
+    z-index: 9999;
 }
 .gradient_bg_white {
     width: 100%;
     height: 15vh;
     margin-top: 3.5vh;
     object-fit: contain;
+    position: absolute;
+    margin-top: 18.8vh;
 }
 .gradient_bg_black {
     width: 100%;
     height: 15vh;
     object-fit: contain;
+    position: absolute;
 }
 .content_main{
     width: 100%;

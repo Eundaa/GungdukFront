@@ -148,10 +148,10 @@
                 var passwordCheck = $("#inputCheckPW_join").val();
                 var phoneNumber = $("#inputPhoneNum_join").val();
                 var email = $("#inputEmail_join").val();
-                //data = "{\"id\" : \"" + userID + "\", \"phoneNum\" : \""+phoneNumber+"\", \"pw\" : \""+password+"\"}";
                 data = "{\"id\" : \"" + userID + "\", \"email\" : \""+email+"\", \"phoneNum\" : \""+phoneNumber+"\", \"pw\" : \""+password+"\"}";
                 
-                if ($("#inputID_join").val() == "" || $("#inputPW_join").val() == "" || $("#inputCheckPW_join").val() == "" ||  $("#inputPhoneNum_join").val() == "" || $("#inputEmail_join").val() ==""){
+                //하나도 입력 안 한 경우
+                if ($("#inputID_join").val() == "" && $("#inputPW_join").val() == "" && $("#inputCheckPW_join").val() == "" &&  $("#inputPhoneNum_join").val() == "" && $("#inputEmail_join").val() ==""){
                     if ( $("#inputID_join").val() == ""){
                         $("#alert_id_form").text('ID를 입력하세요.');
                         if($("#inputID_join").keydown(function(){
@@ -182,26 +182,56 @@
                             $('#alert_num_form').empty();
                         }));
                     }
-                } 
-                if ( $("#inputPW_join").val() != $("#inputCheckPW_join").val() && !checkEmail(email) ){
+                    $(".rec1_join").css('color','red');
+                    $(".rec1_join").text('모두 입력해주세요.');
+                    return false;
+                }
+                //완전히 입력 안 한 경우 
+                else if ($("#inputID_join").val() == "" || $("#inputPW_join").val() == "" || $("#inputCheckPW_join").val() == "" ||  $("#inputPhoneNum_join").val() == "" || $("#inputEmail_join").val() ==""){
+                    if ( $("#inputID_join").val() == ""){
+                        $("#alert_id_form").text('ID를 입력하세요.');
+                        if($("#inputID_join").keydown(function(){
+                            $('#alert_id_form').empty();
+                        }));
+                    } 
+                    if ( $("#inputEmail_join").val() == "" ){
+                        $("#alert_email_form").text('이메일 주소를 입력하세요.');
+                        if($("#inputEmail_join").keydown(function(){
+                            $('#alert_email_form').empty();
+                        }));
+                    } 
+                    if ( $("#inputPW_join").val() == "" ){
+                        $("#alert_pw_form").text('비밀번호를 입력하세요.');
+                        if($("#inputPW_join").keydown(function(){
+                            $('#alert_pw_form').empty();
+                        }));
+                    } 
+                    if ( $("#inputCheckPW_join").val() == "" ){
+                        $("#alert_pwC_form").text('비밀번호 확인을 입력하세요.');
+                        if($("#inputCheckPW_join").keydown(function(){
+                            $('#alert_pwC_form').empty();
+                        }));
+                    } 
+                    if ( $("#inputPhoneNum_join").val() == "" ){
+                        $("#alert_num_form").text('핸드폰 번호를 입력하세요.');
+                        if($("#inputPhoneNum_join").keydown(function(){
+                            $('#alert_num_form').empty();
+                        }));
+                    }
                     $(".rec1_join").css('color','red');
                     $(".rec1_join").text('기입된 정보가 올바르지 않습니다.');
                     return false;
-                }
-                if ( $("#inputPW_join").val() != $("#inputCheckPW_join").val() ){
+                } 
+                //비번확인, 이메일형식, 핸드폰형식 모두 일치하지 않는 경우
+                else if ( $("#inputPW_join").val() != $("#inputCheckPW_join").val() && !checkEmail(email) && !checkPhoneNum(phoneNumber)){
                     $(".rec1_join").css('color','red');
-                    $(".rec1_join").text('비밀번호가 일치하지 않습니다.');
+                    $(".rec1_join").text('기입된 정보가 올바르지 않습니다.');
                     return false;
-                }
-                
-                if (!checkEmail(email)) {
+                } 
+                //비번확인, 이메일형식, 핸드폰형식 중에 하나라도 일치하지 않는 경우
+                else if ( $("#inputPW_join").val() != $("#inputCheckPW_join").val() || !checkEmail(email) || !checkPhoneNum(phoneNumber)){
                     $(".rec1_join").css('color','red');
-                    $(".rec1_join").text('이메일 형식이 올바르지 않습니다.');
-                    return false;
-                }
-                if (!checkPhoneNum(phoneNumber)) {
-                    $(".rec1_join").css('color','red');
-                    $(".rec1_join").text('핸드폰 번호를 다시 입력해주세요.');
+                    $(".rec1_join").text('기입된 정보가 올바르지 않습니다.');
                     return false;
                 }
 
