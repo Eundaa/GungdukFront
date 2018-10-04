@@ -2,13 +2,24 @@
 <html lang="en">
 <head>
     <!-- Required meta tags -->
+    <title>my page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>my page</title>
+    <script>
+        function View(){
+            document.getElementById("body").style.overflow="hidden";
+            document.getElementById("levelLayout").style.display='inline';
+
+        }
+        function Close(){
+            document.getElementById("body").style.overflow="auto";
+            document.getElementById("levelLayout").style.display='none';
+        }
+    </script>
 </head>
-<body>
-<div class="frame_mypage">
+<body id="body">
+<div class="frame_mypage" style="position: absolute;">
     <div class = "header">
         <a href="01_0_main.html">
             <img src="img/ic-back@2x.png"
@@ -21,7 +32,7 @@
         <div class="current_status">
             <div class="img_current_status">
                 <img class="ic_level">
-                <a href="01_1_mainLevel.html"><img src="img/ic-help@2x.png" class="ic_help"></a>
+                <a href="javascript:View();"><img src="img/ic-help@2x.png" class="ic_help"></a>
             </div>
             <div class="name_current_status"></div>
             <div class="points_current_status"></div>
@@ -98,6 +109,82 @@
     </div>
 </div>
 
+
+<!-- 상세 설명 popup -->
+<div id="levelLayout">
+    <div class="wrapper_popUp">
+        <div class="content_popUp">
+            <div class="header_popUp">
+                <span class="header_title">계급</span>
+                <a href="javascript:Close();">
+                    <img src="img/ic-clear@2x.png"
+                            class="ic_clear">
+                </a>
+            </div>
+            <div class="result_popUp">
+                <div class="rec1_mainLevel">
+                    <div class="rec1_current5_mainLevel"></div>
+                    <div class="rec1_current4_mainLevel"></div>
+                    <div class="rec1_current3_mainLevel"></div>
+                    <div class="rec1_current2_mainLevel"></div>
+                    <div class="rec1_current1_mainLevel"></div>
+                </div>
+                <div class="rec2_mainLevel">
+                    <img src="img/upLine.png"
+                            class="upLine">
+                </div>
+                <div class="rec3_mainLevel">
+                    <div class="rec3_level_mainLevel">
+                        <img src="img/ic-level-king@2x.png"
+                                class="ic_level_king">
+                        <div class="rec3_infoBox_mainLevel">
+                            <div class="rec3_info1_mainLevel">1계층</div>
+                            <div class="rec3_info2_mainLevel">왕</div>
+                        </div>
+                    </div>
+                    <div class="rec3_level_mainLevel">
+                        <img src="img/ic-level-gentleman@2x.png"
+                                class="ic_level_gentleman">
+                        <div class="rec3_infoBox_mainLevel">
+                            <div class="rec3_info1_mainLevel">2계층</div>
+                            <div class="rec3_info2_mainLevel">양반</div>
+                        </div>
+                    </div>
+                    <div class="rec3_level_mainLevel">
+                        <img src="img/ic-level-general@2x.png"
+                                class="ic_level_general">
+                        <div class="rec3_infoBox_mainLevel">
+                            <div class="rec3_info1_mainLevel">3계층</div>
+                            <div class="rec3_info2_mainLevel">관리</div>
+                        </div>
+                    </div>
+                    <div class="rec3_level_mainLevel">
+                        <img src="img/ic-level-civilian@2x.png"
+                                class="ic_level_civilian">
+                        <div class="rec3_infoBox_mainLevel">
+                            <div class="rec3_info1_mainLevel">4계층</div>
+                            <div class="rec3_info2_mainLevel">평민</div>
+                        </div>
+                    </div>
+                    <div class="rec3_level_mainLevel">
+                        <img src="img/ic-level-labor@2x.png"
+                                class="ic_level_labor">
+                        <div class="rec3_infoBox_mainLevel">
+                            <div class="rec3_info1_mainLevel">5계층</div>
+                            <div class="rec3_info2_mainLevel">노비</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:Close();">
+                <div class="btn_popUp">
+                    <span class="btn_popUp_text">확인</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -150,6 +237,18 @@
                 $(".done_current_status").css({
                     'width': data.percent + "%"
                 });
+            }
+            //계급 이름, 사진 변경과 퍼센테이지 변경
+            if ( data.level == 1 ){
+                $(".rec1_current1_mainLevel").append("<img src='img/indicator-box@2x.png' class='indicator_box'><div class='rec1_indicatorNm_mainLevel'>현재 계급</div>");
+            } else if ( data.level == 2 ){
+                $(".rec1_current2_mainLevel").append("<img src='img/indicator-box@2x.png' class='indicator_box'><div class='rec1_indicatorNm_mainLevel'>현재 계급</div>");
+            } else if ( data.level == 3 ){
+                $(".rec1_current3_mainLevel").append("<img src='img/indicator-box@2x.png' class='indicator_box'><div class='rec1_indicatorNm_mainLevel'>현재 계급</div>");
+            } else if ( data.level == 4 ){
+                $(".rec1_current4_mainLevel").append("<img src='img/indicator-box@2x.png' class='indicator_box'><div class='rec1_indicatorNm_mainLevel'>현재 계급</div>");
+            } else if ( data.level == 5 ){
+                $(".rec1_current5_mainLevel").append("<img src='img/indicator-box@2x.png' class='indicator_box'><div class='rec1_indicatorNm_mainLevel'>현재 계급</div>");
             }
             
         }});
