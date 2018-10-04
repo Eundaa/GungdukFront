@@ -107,48 +107,49 @@
             //아이디 찾기
             $("#rec2_btn_findID").click(function(){
                 var phoneNum = "phoneNum=" + $("#inputPhoneNum_forgotIDPW").val();
+
+                if($("#inputPhoneNum_forgotIDPW").val()==""){
+                    $('#alert_phoneNum_form').text("핸드폰 번호를 입력하세요.");
+                    if($("#inputPhoneNum_forgotIDPW").keydown(function(){
+                        $('#alert_phoneNum_form').empty();
+                    }));
+                    return false;
+                }
                 $.ajax({
                     type:'POST',
                     url:'http://13.125.138.168:8080/gungduk/api/v1/searchId',
                     data: phoneNum,
                     async:false,
                     success:function(data){
-                        if($("#inputPhoneNum_forgotIDPW").val()==""){
-                            $('#alert_phoneNum_form').text("핸드폰 번호를 입력하세요.");
-                            if($("#inputPhoneNum_forgotIDPW").keydown(function(){
-                                $('#alert_phoneNum_form').empty();
-                            }));
-                        }
+                        if(data=="error")
+                            $('#alert_phoneNum_form').text("존재하지 않는 번호입니다.");
                         else{
-                            if(data=="error")
-                                $('#alert_phoneNum_form').text("존재하지 않는 번호입니다.");
-                            else{
-                                $("#resultID_forgotIDPW").remove();
-                                $(".rec1_forgotIDPW").css({
-                                    'font-family': 'AppleSDGothicNeo',
-                                    'font-size': '2.1875vh',
-                                    'font-weight': 'normal',
-                                    'font-style': 'normal',
-                                    'font-stretch': 'normal',
-                                    'line-height': '1.43',
-                                    'letter-spacing': 'normal',
-                                    'text-align': 'center',
-                                    'color': '#36797b',
-                                    'font-weight': 'bold'
-                                });
-                                $(".rec1_forgotIDPW").append("<span style='line-height: 10vh;'>아이디는 " + data +" 입니다.</span>");
-                                $("#rec2_btn_findID").remove();
-                                $(".rec3_btn_forgotIDPW").css({
-                                    'width': '92.5vw',
-                                    'height': '7.85vh',
-                                    'border-radius': '8px',
-                                    'background-color': '#5f9ea0',
-                                    'margin-left': '3.75vw',
-                                    'text-align': 'center'
-                                });
-                                $(".rec3_btn_forgotIDPW").append("<span style='height: 7.85vh;font-size: 0.875em;font-weight: bold;font-style: normal;font-stretch: normal;letter-spacing: -0.5px;color: #ffffff;line-height: 7.85vh;'>확인</span>");
-                            }
+                            $("#resultID_forgotIDPW").remove();
+                            $(".rec1_forgotIDPW").css({
+                                'font-family': 'AppleSDGothicNeo',
+                                'font-size': '2.1875vh',
+                                'font-weight': 'normal',
+                                'font-style': 'normal',
+                                'font-stretch': 'normal',
+                                'line-height': '1.43',
+                                'letter-spacing': 'normal',
+                                'text-align': 'center',
+                                'color': '#36797b',
+                                'font-weight': 'bold'
+                            });
+                            $(".rec1_forgotIDPW").append("<span style='line-height: 10vh;'>아이디는 " + data +" 입니다.</span>");
+                            $("#rec2_btn_findID").remove();
+                            $(".rec3_btn_forgotIDPW").css({
+                                'width': '92.5vw',
+                                'height': '7.85vh',
+                                'border-radius': '8px',
+                                'background-color': '#5f9ea0',
+                                'margin-left': '3.75vw',
+                                'text-align': 'center'
+                            });
+                            $(".rec3_btn_forgotIDPW").append("<span style='height: 7.85vh;font-size: 0.875em;font-weight: bold;font-style: normal;font-stretch: normal;letter-spacing: -0.5px;color: #ffffff;line-height: 7.85vh;'>확인</span>");
                         }
+                        
                     },
                     error:function(request,error){ 
                         console.log(error.responseText);
