@@ -73,7 +73,7 @@ a{
     width: 87.5vw;
     height: 48.75vh;
 }
-.btn_popUp{
+.btn_popUp_main{
     width: 87.5vw;
     height: 9.1vh;
     background-color: #5f9ea0;
@@ -912,74 +912,6 @@ ul.tabs li.current{
     float: left;
 }
 
-
-/* 01_2_mainLevelUp */
-.rec1_mainLevelUp{
-    height: 4.5vh;
-    padding-top: 9vh;
-}
-.rec1_content_mainLevelUp{
-    font-family: AppleSDGothicNeo;
-    font-size: 24px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.9px;
-    text-align: center;
-    color: #36797b;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.rec2_mainLevelUp{
-    width: 55vw;
-    height: 7.5vh;
-    margin-left: 17vw;
-    padding-top: 6vh;
-}
-.rec2_img1_mainLevelUp{
-    width: 13.3vw;
-    height: 7.5vh;
-    float: left;
-}
-.img1{
-    width: 13.3vw;
-}
-.rightLine{
-    width: 23.1vw;
-    margin-top: 2.5vh;
-    margin-left: 3vw;
-    margin-right: 1vw;
-    float: left;
-}
-.rec2_img2_mainLevelUp{
-    width: 13.3vw;
-    height: 7.5vh;
-    float: left;
-}
-.img2{
-    width: 13.3vw;
-}
-.rec3_mainLevelUp{
-    width: 100%;
-    margin-top: 5vh;
-}
-.rec3_content_mainLevelUp{
-    font-family: AppleSDGothicNeo;
-    font-size: 14px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.5px;
-    text-align: center;
-    color: #36797b;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 /*02_mypage*/
 .frame_mypage{
     width: 100%;
@@ -1257,8 +1189,6 @@ ul.tabs li.current{
     float: left;
     margin: 0px 5.5vw 0px 0px;
 }
-/*recG_text, recG_bar은 03_mapChoice에*/
-
 /* 02_2_1_qCheckListD */
 .content_gray_D{
     width: 100%;
@@ -1274,230 +1204,6 @@ ul.tabs li.current{
     position: relative;
 }
 
-/*02_3_questPopup*/
-.ic_clear_alter{
-    width: 7.5vw;
-    height: 4.28vh;
-    margin-left: 76.25vw;
-    margin-top: 2.14vh;
-    position: absolute;
-}
-.gradient_white_m{
-    position: absolute;
-    width: 87.5vw;
-    height: 10vh;
-    margin-top: 19vh;
-    object-fit: contain;
-}
-.img_popUp{
-    width: 87.5vw;
-    height: 28.57vh;
-}
-.backImg_popUp{
-    width: 87.5vw;
-    height: 28.57vh;
-}
-.imgGra_popUp{
-    width: 87.5vw;
-    height: 28.57vh;
-    position: absolute;
-}
-.ex_popUp{
-    width: 87.5vw;
-    height: 30vh;
-    position: absolute;  
-}
-.ex_title_popUp{
-    height: 3.39vh;
-    font-family: AppleSDGothicNeo;
-    font-size: 1em;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #4a4a4a;
-    margin-top: 2.85vh;
-    margin-left: 3.75vw;
-}
-.ex_bar_popUp{
-    width: 4.68vw;
-    height: 0.35vh;
-    background-color: #5f9ea0;
-    margin-top: 1vh;
-    margin-left: 3.75vw;
-}
-.ex_content_popUp{
-    width: 80vw;
-    font-family: AppleSDGothicNeo;
-    font-size: 12px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.4px;
-    color: #4a4a4a;
-    margin-left: 3.75vw;
-    margin-top: 2.14vh;
-}
-.btn_popUp_questPopup{
-    position: absolute;
-    margin-top: 30vh;
-}
-
-/* 02_3_1_questPopupProgress */
-.header_title_popUp{
-    height: 10vh;
-    font-family: AppleSDGothicNeo;
-    font-size: 1em;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: -0.6px;
-    text-align: center;
-    color: #36797b;
-    line-height: 10vh;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.ic_clear{
-    width: 7.5vw;
-    height: 4.28vh;
-    margin-left: 76.25vw;
-    margin-top: 2.85vh;
-}
-.quest_popUp{
-    height: 20.17vh;
-}
-.quest_Q_popUp{
-    width: 80vw;
-    height: 8.92vh;
-    margin-left: 3.75vw;
-    padding-top: 2.14vh;
-    font-family: AppleSDGothicNeo;
-    font-size: 0.75em;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.4px;
-    color: #4a4a4a;
-}
-.quest_ex_popUp{
-    margin-left: 3.75vw;
-}
-[type="radio"]:checked,
-[type="radio"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
-}
-/* 앞에 radio공간 두고 뒤에 문자 css*/
-/* 체크된 애의 label, 체크 안 된 애의 label 모두!*/
-[type="radio"]:checked + label,
-[type="radio"]:not(:checked) + label 
-{
-    position: relative;
-    padding-left: 8.75vw;
-    padding-right: 4.68vw;
-    cursor: pointer;
-    line-height: 3.57vh;
-    display: inline-block;
-    font-family: AppleSDGothicNeo;
-    font-size: 0.8125em;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.5px;
-    color: #4a4a4a;
-}
- /* radio 버튼의 border*/
-[type="radio"]:checked + label:before,
-[type="radio"]:not(:checked) + label:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 5.62vw;
-    height: 3.21vh;
-    border: 1px solid #ddd;
-    border-radius: 100%;
-    background: #fff;
-}
-/* radio 버튼 선택시 내용물*/
-[type="radio"]:checked + label:after,
-[type="radio"]:not(:checked) + label:after { 
-    content: '';
-    width: 3.75vw;
-    height: 2.14vh;
-    background: #70bcbf;
-    position: absolute;
-    top: 0.71vh;
-    left: 1.25vw;
-    border-radius: 100%;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-[type="radio"]:not(:checked) + label:after {
-    opacity: 0;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-}
-[type="radio"]:checked + label:after {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-}
-    
-/* 02_4_questQuizSuc */
-.result_title_popUp{
-    width: 64.06vw;
-    height: 5.17vh;
-    padding-top: 5.35vh;
-    margin-left: 11.87vw;
-    font-family: AppleSDGothicNeo;
-    font-size: 1.5em;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.9px;
-    text-align: center;
-    color: #36797b;
-}
-.pic_win {
-    width: 52.5vw;
-    height: 20.714vh;
-    margin-top: 3.75vh;
-    margin-left: 17.5vw;
-    object-fit: contain;
-}
-.result_content_popUp{
-    width: 63.75vw;
-    height: 3.03vh;
-    margin-left: 11.87vw;
-    margin-top: 4.1vh;
-    font-family: AppleSDGothicNeo;
-    font-size: 14px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.5px;
-    text-align: center;
-    color: #5f9ea0;
-}
-
-/* 02_5_questQuizFail */
-.pic_failed {
-    width: 41.25vw;
-    height: 18.75vh;
-    margin-top: 4.28vh;
-    margin-left: 24.375vw;
-    object-fit: contain;
-  }
-  
 /*04_hpConnect*/
 .rec1_hpConnect{
     width: 44.37vw;
@@ -1639,6 +1345,295 @@ ul.tabs li.current{
     letter-spacing: -0.5px;
     color: #ffffff;
     line-height: 7.9vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*Modal*/
+.modal-dialog {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    pointer-events: auto;
+    background-clip: padding-box;
+    outline: 0;
+    width: 87.5vw;
+    height: 67.67vh;
+    margin-left: 6.25vw;
+    margin-top: 16.16vh;
+    background-color: #ffffff;
+    position: absolute;
+}
+.ic_clear_alter{
+    width: 7.5vw;
+    height: 4.28vh;
+    margin-left: 76.25vw;
+    margin-top: 2.14vh;
+    position: absolute;
+}
+.gradient_white_m{
+    position: absolute;
+    width: 87.5vw;
+    height: 10vh;
+    margin-top: 19vh;
+    object-fit: contain;
+}
+#ModalBodyImg_sp{
+	width: 87.5vw;
+    height: 28.57vh;
+    padding: 0px;
+    margin: 0px;
+}
+#ModalBody_sp{
+	width: 80vw;
+    height: 18.5vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    color: #4a4a4a;
+    margin-left: 3.75vw;
+    margin-top: 2.14vh;
+    overflow: auto;
+}
+#ModalLabel_sp{
+	font-family: AppleSDGothicNeo;
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+    padding: 2.4vh 0px 0px 3.75vw;
+}
+.modal_bar_popUp{
+    width: 4.68vw;
+    height: 0.35vh;
+    background-color: #5f9ea0;
+    margin-top: 1vh;
+    margin-left: 3.75vw;
+}
+.btn_popUp{
+	width: 87.5vw;
+    height: 9.1vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.875em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    padding: 0px; 
+    border: 0px;
+    color: #ffffff; 
+    background-color: #5f9ea0;
+}
+#ModalLabel_qp{
+	height: 10vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -0.6px;
+    text-align: center;
+    color: #36797b;
+    line-height: 10vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.ic_clear{
+    width: 7.5vw;
+    height: 4.28vh;
+    margin-left: 76.25vw;
+    margin-top: 2.85vh;
+}
+#ModalBodyImg_qp{
+	width: 87.5vw;
+    height: 28.57vh;
+    padding: 0px;
+    margin: 0px;
+}
+#ModalBody_qp{
+	width: 80vw;
+    height: 8.92vh;
+    margin-left: 3.75vw;
+    padding-top: 2.14vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.75em;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    color: #4a4a4a;
+}
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+/* 앞에 radio공간 두고 뒤에 문자 css*/
+/* 체크된 애의 label, 체크 안 된 애의 label 모두!*/
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label 
+{
+    position: relative;
+    padding-left: 8.75vw;
+    padding-right: 4.68vw;
+    cursor: pointer;
+    line-height: 3.57vh;
+    display: inline-block;
+    font-family: AppleSDGothicNeo;
+    font-size: 0.8125em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    color: #4a4a4a;
+}
+ /* radio 버튼의 border*/
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5.62vw;
+    height: 3.21vh;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+/* radio 버튼 선택시 내용물*/
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after { 
+    content: '';
+    width: 3.75vw;
+    height: 2.14vh;
+    background: #70bcbf;
+    position: absolute;
+    top: 0.71vh;
+    left: 1.25vw;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.result_title_popUp{
+    width: 64.06vw;
+    height: 5.17vh;
+    padding-top: 5.35vh;
+    margin-left: 11.87vw;
+    font-family: AppleSDGothicNeo;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.9px;
+    text-align: center;
+    color: #36797b;
+}
+.pic_win {
+    width: 52.5vw;
+    height: 20.714vh;
+    margin-top: 3.75vh;
+    margin-left: 17.5vw;
+    object-fit: contain;
+}
+.result_content_popUp{
+    width: 63.75vw;
+    height: 3.03vh;
+    margin-left: 11.87vw;
+    margin-top: 4.1vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #5f9ea0;
+}
+.pic_failed {
+    width: 41.25vw;
+    height: 18.75vh;
+    margin-top: 4.28vh;
+    margin-left: 24.375vw;
+    object-fit: contain;
+}
+#ModalLabel_level{
+	height: 10vh;
+    font-family: AppleSDGothicNeo;
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -0.6px;
+    text-align: center;
+    color: #36797b;
+    line-height: 10vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.levelUp_icons{
+	width: 55vw;
+    height: 7.5vh;
+    margin-left: 17vw;
+    margin-top: 6vh;
+}
+.img1{
+	width: 13.3vw;
+    height: 7.5vh;
+    float: left;
+}
+.rightLine{
+	width: 23.1vw;
+    margin-top: 2.5vh;
+    margin-left: 3vw;
+    margin-right: 1vw;
+    float: left;
+}
+.img2{
+	width: 13.3vw;
+    height: 7.5vh;
+    float: left;
+}
+.rec3_mainLevelUp{
+    width: 100%;
+    margin-top: 5vh;
+}
+.rec3_content_mainLevelUp{
+    font-family: AppleSDGothicNeo;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #36797b;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
