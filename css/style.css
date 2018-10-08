@@ -8,12 +8,6 @@ body {
     height: 100%;
     margin: 0 0 0 0;
 }
-.wrapper_popUp{
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.3);
-    position: absolute;
-}
 .header {
     width: 100%;
     height: 10vh;
@@ -58,6 +52,13 @@ a{
     height: 0px;
 }
 /* popUp series */
+.wrapper_popUp{
+    width: 100%;
+    /*height: 100vh;*/
+    height: 118.38vh;
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+}
 .content_popUp{
     width: 87.5vw;
     height: 67.67vh;
@@ -70,8 +71,13 @@ a{
     height: 10vh;
 }
 .result_popUp{
-    width: 87.5vw;
-    height: 48.75vh;
+    width: 63.5vw;
+    height: 39.25vh;
+    padding-left:12vw;
+    padding-right:12vw;
+    padding-top:4.75vh;
+    padding-bottom:4.75vh;
+
 }
 .btn_popUp_main{
     width: 87.5vw;
@@ -314,6 +320,7 @@ a{
     background: none rgba(0,0,0,0.5);
     filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#80000000', endColorstr='#80000000');
 }
+
 
 /*00_0_splash*/
 #html_splash { 
@@ -634,7 +641,7 @@ ul.tabs li.current{
     position: absolute;
     z-index: 9999;
 }
-.gradient_bg_white {
+/*.gradient_bg_white {
     width: 100%;
     height: 15vh;
     margin-top: 3.5vh;
@@ -647,7 +654,7 @@ ul.tabs li.current{
     height: 15vh;
     object-fit: contain;
     position: absolute;
-}
+}*/
 .content_main{
     width: 100%;
     height: 62.5vh;
@@ -677,10 +684,10 @@ ul.tabs li.current{
     margin-top: 2.3vh;
 }
 .rec1_word_main{
-    width: 50vw;
+    width: 90%;
     height: 2.3vh;
     font-family: AppleSDGothicNeo;
-    font-size: 2vh;
+    font-size: 3.3vw;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
@@ -786,16 +793,43 @@ ul.tabs li.current{
 
 /*01_1_mainLevel*/
 .rec1_mainLevel{
+    width: 63.5vw;
+    height: 7.85vh;
+}
+.rec1_current1_mainLevel{
     width: 24vw;
-    height: 44vh;
-    margin-top:4.75vh;
-    margin-left: 4.73vw;
+    height: 7.5vh;
+    position: relative;
+    float: left;
+}
+.rec1_current2_mainLevel{
+    width: 24vw;
+    height: 7.5vh;
+    position: relative;
+    float: left;
+}
+.rec1_current3_mainLevel{
+    width: 24vw;
+    height: 7.5vh;
+    position: relative;
+    float: left;
+}
+.rec1_current4_mainLevel{
+    width: 24vw;
+    height: 7.5vh;
+    position: relative;
+    float: left;
+}
+.rec1_current5_mainLevel{
+    width: 24vw;
+    height: 7.5vh;
+    position: relative;
     float: left;
 }
 .indicator_box{
     width: 19.2vw;
     height: 4.7vh;
-    margin-left: 4.8vw;
+    margin-left: 3vw;
     margin-top: 1.4vh;
 }
 .rec1_indicatorNm_mainLevel {
@@ -809,65 +843,39 @@ ul.tabs li.current{
     text-align: center;
     color: #ffffff;
     position: absolute;
-    left: 55%;
+    left: 48%;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 24vw;
 }
-.rec1_current1_mainLevel{
-    width: 24vw;
+.rec1_level_mainLevel{
+    width: 14vw;
     height: 7.5vh;
-    position: relative;
+    float: left;
 }
-.rec1_current2_mainLevel{
-    width: 24vw;
-    height: 7.5vh;
-    position: relative;
+.ic_level_king {
+    width: 13.3vw;
 }
-.rec1_current3_mainLevel{
-    width: 24vw;
-    height: 7.5vh;
-    position: relative;
+.ic_level_gentleman{
+    width: 13.3vw;
 }
-.rec1_current4_mainLevel{
-    width: 24vw;
-    height: 7.5vh;
-    position: relative;
+.ic_level_general{
+    width: 13.3vw;
 }
-.rec1_current5_mainLevel{
-    width: 24vw;
-    height: 7.5vh;
-    position: relative;
+.ic_level_civilian{
+    width: 13.3vw;
 }
-.rec2_mainLevel{
-    width: 3.1vw;
-    height: 44vh;
-    margin-top:4.75vh;
+.ic_level_labor{
+    width: 13.3vw;
+}
+.rec1_infoBox_mainLevel{
+    width: 15.2vw;
+    float: left;
     margin-left: 3vw;
-    float: left;
+    margin-top: 1.2vh;
 }
-.upLine{
-    width:5vw;
-    margin-top:2.7vh;
-}
-.rec3_mainLevel{
-    width: 33vw;
-    height: 44vh;
-    margin-top:4.75vh;
-    margin-left: 2.2vw;
-    float: left;
-}
-.rec3_level_mainLevel{
-    width: 33vw;
-    height: 7.5vh;
-}
-.rec3_infoBox_mainLevel{
-    width: 15.2vw;
-    float: left;
-    margin-left: 4.4vw;
-}
-.rec3_info1_mainLevel{
-    width: 15.2vw;
+.rec1_info1_mainLevel{
+    width: 14vw;
     height: 1.875vh;
     font-family: AppleSDGothicNeo;
     font-size: 1.6vh;
@@ -877,9 +885,9 @@ ul.tabs li.current{
     line-height: normal;
     letter-spacing: -0.4px;
     color: #9b9b9b;
-    margin-top:1.6vh;
+    margin-top:0.5vh;
 }
-.rec3_info2_mainLevel{
+.rec1_info2_mainLevel{
     width: 15.2vw;
     height: 2.66vh;
     font-family: AppleSDGothicNeo;
@@ -891,26 +899,7 @@ ul.tabs li.current{
     letter-spacing: -0.5px;
     color: #9b9b9b;
 }
-.ic_level_king {
-    width: 13.3vw;
-    float: left;
-}
-.ic_level_gentleman{
-    width: 13.3vw;
-    float: left;
-}
-.ic_level_general{
-    width: 13.3vw;
-    float: left;
-}
-.ic_level_civilian{
-    width: 13.3vw;
-    float: left;
-}
-.ic_level_labor{
-    width: 13.3vw;
-    float: left;
-}
+
 
 /*02_mypage*/
 .frame_mypage{
