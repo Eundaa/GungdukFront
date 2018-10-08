@@ -77,6 +77,7 @@ a{
     padding-right:12vw;
     padding-top:4.75vh;
     padding-bottom:4.75vh;
+
 }
 .btn_popUp_main{
     width: 87.5vw;
@@ -898,6 +899,7 @@ ul.tabs li.current{
     letter-spacing: -0.5px;
     color: #9b9b9b;
 }
+
 
 /*02_mypage*/
 .frame_mypage{
