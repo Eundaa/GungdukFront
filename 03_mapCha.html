@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=TTSmvAuWm8qgc0ZZ8jYp&submodules=geocoder"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>03_mapCha</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class = "header">
+        <a href="javascript:history.back();">
+            <img src="img/ic-back@2x.png"
+                layout="responsive"
+                class="ic_back">
+        </a>
+        <span class="header_title">지도</span>
+    </div>
+    <div class="content">
+        <div class="rec1_map" id="map">
+        </div>
+        <div class="rec2_btns_map">
+            <div class="rec3_btnL_map">
+                <span class="textL_map" onclick="loopData()">위치 확인</span>
+            </div>
+            <div class="rec3_btnR_map">
+                <span class="textR_map" onclick="stopData()">위치 중지</span>
+            </div>
+            <a href="javascript:history.back();">
+                <div class="rec3_btn_map">
+                    <span class="text_map">안내종료</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Modal_SpecificpointPopup-->
+    <div class="modal fade" id="ModalPopup" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="document" style="position: relative">
+            <div class="modal-header" style="padding: 0px; width: 87.5vw; height: 28.57vh;">
+                <div class="modal-imgGra">
+                    <img src="img/ic-clear-alter@2x.png" class="ic_clear_alter" data-dismiss="modal" aria-label="Close" onclick="sendquitQst()">
+                    <img src="img/gradient-white-m@2x.png" class="gradient_white_m">
+                </div>
+                <img src="http://via.placeholder.com/640x320" id="ModalBodyImg_sp">
+            </div>            
+            <div class="modal-body" style="padding: 0px">
+                <h5 class="modal-title" id="ModalLabel_sp">Modal Specific title</h5>
+                <div class="modal_bar_popUp"></div>
+                <div id="ModalBody_sp">Modal palace body Royal</div> 
+            </div>
+            <!--Trigger_QuestPopup-->
+            <div class="modal-footer" style="padding: 0px">
+                <button type="button" class="btn_popUp" data-dismiss="modal" data-toggle="modal" data-target="#ModalQuest">퀘스트 시작하기</button>
+            </div>
+        </div>
+    </div>
+    
+    <!--Modal_QuestPopup-->
+    <div class="modal fade" id="ModalQuest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="document" style="position: relative">
+            <div class="modal-header" style="padding: 0px; width: 87.5vw; height: 10vh;">
+                <h5 class="modal-title" id="ModalLabel_qp">Modal Quest title</h5>
+                <img src="img/ic-clear@2x.png" class="ic_clear" data-dismiss="modal" aria-label="Close" onclick="sendquitQst()">
+            </div>
+            <img src="http://via.placeholder.com/640x320" id="ModalBodyImg_qp">
+            <div class="modal-body" style="padding: 0px; text-align: center;" >
+                <div id="ModalBody_qp">Royal palace body Modal</div>
+                <div class="form-check form-check-inline" style="margin-left: 2vw">
+                    <input class="form-check-input" id="e1" type="radio" name="inlineRadioOptions" value="1">
+                    <label class="form-check-label" for="e1" id="inlineRadio1"></label>
+                </div>
+                <div class="form-check form-check-inline" style="margin-left: 2vw">
+                    <input class="form-check-input" id="e2" type="radio" name="inlineRadioOptions" value="2">
+                    <label class="form-check-label" for="e2" id="inlineRadio2"></label>
+                </div>   
+                <div class="form-check form-check-inline" style="margin-left: 2vw">
+                    <input class="form-check-input" id="e3" type="radio" name="inlineRadioOptions" value="3">
+                    <label class="form-check-label" for="e3" id="inlineRadio3"></label>
+                </div>
+            </div>
+
+            <!--Trigger_Incorrect Or Correct Popup-->
+            <div class="modal-footer" style="padding: 0px">
+                <button type="button" class="btn_popUp" data-dismiss="modal" data-toggle="modal" id="selecter_incorOrcor" onclick="compare()">제출하기</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal_InorrectPopup-->
+    <div class="modal fade" id="ModalIncorrect" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="document" style="position: relative">
+            <div class="modal-header" style="padding: 0px; border: 0px; width: 87.5vw; height: 10vh;">
+                <img src="img/ic-clear@2x.png" class="ic_clear" data-dismiss="modal" aria-label="Close" onclick="sendquitQst()">
+            </div>
+            <div class="modal-body" style="padding: 0px">
+                <div class="result_title_popUp">퀘스트 실패!!</div>
+                <img src="img/pic-failed@2x.png" class="pic_failed">
+                <div class="result_content_popUp">재도전 하시겠습니까?</div>
+                </div>
+            <!--Trigger_QuestPopup-->
+            <div class="modal-footer" style="padding: 0px">
+                <button type="button" class="btn_popUp" data-dismiss="modal" data-toggle="modal" data-target="#ModalQuest">재도전하기</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal_CorrectPopup-->
+    <div class="modal fade" id="ModalCorrect" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="document" style="position: relative">
+            <div class="modal-header" style="padding: 0px; border: 0px; width: 87.5vw; height: 10vh;">
+                <img src="img/ic-clear@2x.png" class="ic_clear" data-dismiss="modal" aria-label="Close" onclick="sendquitQst()">
+            </div>
+            <div class="modal-body" style="padding: 0px">
+                <div class="result_title_popUp">정답입니다!!</div>
+                <img src="img/pic-win@2x.png" class="pic_win">
+                <div class="result_content_popUp">퀘스트 완료!!</div>
+            </div>
+            <div class="modal-footer" style="padding: 0px">
+                <button type="button" class="btn_popUp" data-dismiss="modal" data-toggle="modal" id="btn_success" onclick="compare2()">퀘스트 성공</button>
+            </div>
+        </div>
+    </div> 
+        
+    <!--Modal_LevelUpPopup-->
+    <div class="modal fade" id="ModalLevelUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="document" style="position: relative">
+            <div class="modal-header" style="padding: 0px; border: 0px; width: 87.5vw; height: 10vh;">
+                <h5 class="modal-title" id="ModalLabel_level">계급</h5>
+                <img src="img/ic-clear@2x.png" class="ic_clear" data-dismiss="modal" aria-label="Close" onclick="sendquitQst()">
+            </div>
+            <div class="modal-body" style="padding: 0px">
+                <div class="result_title_popUp">축하합니다!</div>
+                <div class="levelUp_icons">
+                    <img class="img1">
+                    <img src="img/rightLine.PNG"
+                            class="rightLine">
+                    <img class="img2">
+                </div>
+                <div class="rec3_mainLevelUp">
+                    <span class="rec3_content_mainLevelUp" id="con1"></span><br/>
+                    <span class="rec3_content_mainLevelUp" id="con2"></span>
+                </div>
+            </div>
+            <div class="modal-footer" style="padding: 0px">
+                <button type="button" class="btn_popUp" data-dismiss="modal" aria-label="Close" onclick="sendquitQst()">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        var map = new naver.maps.Map('map');
+
+        var Changgyung_plc = new naver.maps.LatLng(37.579638, 126.994719);
+
+        map.setCenter(Changgyung_plc);
+        map.setZoom(13);
+
+        // 마커
+        var Changgyung_marker = new naver.maps.Marker({
+            position: new naver.maps.LatLng(37.579638, 126.994719),
+            map: map
+        });
+                
+        var nowLevel;
+        var startLoop;
+
+        var nowHere_marker;
+
+        window.onload = function(){
+            if(navigator.geolocation == undefined){
+                alert("위치 정보 기능을 지원하지 않습니다!")
+                return;
+            }
+        }
+
+        function showData(){
+        // checkAvailability();
+        // nowHere_marker.setMap(null); // 이전 마커 없애기
+
+        if(navigator.geolocation){
+        // nowHere_marker.setMap(null); //이전 마커 없애기.
+        navigator.geolocation.getCurrentPosition(success, fail); // 현재 위치 정보를 조사하고 성공 실패 했을시 호출되는 함수 설정
+        }
+        else{
+        alert('브라우저가 geolocation을 지원하지 않습니다!.');
+        }
+        // setTimeout(showData, 1000);
+        }
+
+
+        function loopData(){
+        startLoop = setInterval(showData, 1000); // 1초 간격
+        }
+
+        function stopData(){
+        clearInterval(startLoop);
+        }
+
+        var arr_qstans = []; // 퀘스트 정답 값이 저장되는 배열
+        var arr_qstname = []; // 퀘스트 이름이 저장되는 배열
+
+        // 성공
+        function success(position) {
+
+        if(nowHere_marker != null){
+        nowHere_marker.setMap(null); // 이전 마커 없애기
+        }
+
+        var lat = position.coords["latitude"];
+        var lon = position.coords["longitude"];
+
+
+        var nowHere = new naver.maps.LatLng(lat,lon);
+
+        map.setCenter(nowHere); // 중심 좌표 이동
+        map.setZoom(13);     // 줌 레벨 변경
+
+        // nowHere_marker = new naver.maps.Marker({
+        // position: new naver.maps.LatLng(lat, lon),
+        // map: map
+        // });
+
+        nowHere_marker = new naver.maps.Marker({
+        position: new naver.maps.LatLng(lat, lon),
+        map: map,
+        icon: {
+            url: 'img/marker.png',
+            // size: new naver.maps.Size(35, 36),
+            // origin: new naver.maps.Point(0, 0),
+                // anchor: new naver.maps.Point(25, 26)
+        }
+        });
+
+        var wsUri = "ws://13.125.138.168:8080/gungduk/websocket/echo.do";
+        //var wsUri = "ws://localhost:8080/gungduk/websocket/echo.do";
+        var userID = sessionStorage.getItem("id");
+
+        var msg = "{ \"latitude\":" + lat + ", \"longitude\":" + lon + ", \"id\": \"" + userID + "\"}";
+        console.log(msg);
+        this.send = function (message, callback) {
+            this.waitForConnection(function () {
+                ws.send(message);
+                if (typeof callback !== 'undefined') {
+                callback();
+                }
+            }, 1000);
+        };
+
+        this.waitForConnection = function (callback, interval) {
+            if (ws.readyState === 1) {
+                callback();
+            } else {
+                var that = this;
+                // optional: implement backoff for interval here
+                setTimeout(function () {
+                    that.waitForConnection(callback, interval);
+                }, interval);
+            }
+        };
+
+        websocket = new WebSocket(wsUri);
+        websocket.onopen = function(data) {
+            console.log("연결됨");
+            this.send(msg);  
+        };
+        websocket.onmessage = function(data) {
+            console.log(data);
+            
+            var obj = JSON.parse(data.data);
+        $('#ModalLabel_sp').text(obj.qstName);
+        $('#ModalBodyImg_sp').attr('src', obj.imgUrl); // 궁 정보 모달창의 이미지
+        $('#ModalBody_sp').text(obj.info);
+
+        $('#ModalLabel_qp').text(obj.qstName);
+        $('#ModalBodyImg_qp').attr('src', obj.imgUrl); // 퀘스트 정보 모달창의 이미지
+        $('#ModalBody_qp').text(obj.qst);
+
+        $('#inlineRadio1').text(obj.qstEx1); 
+        $('#inlineRadio2').text(obj.qstEx2);
+        $('#inlineRadio3').text(obj.qstEx3);
+
+        arr_qstans.push(obj.answer);//정답값이 받아오는 배열
+        arr_qstname.push(obj.qstName);//퀘스트 이름이 저장되는 배열
+        console.log(arr_qstname);
+
+        $('#ModalPopup').modal('show');
+        };
+        websocket.onerror = function(evt) {
+            console.log("error: " + evt);
+        };
+        websocket.onclose = function(evt) {
+            websocket.close();
+            console.log("close");
+        };
+        }
+
+        function compare() {
+        var arr_userchoice = $("input[type=radio][name=inlineRadioOptions]:checked").val();
+        var userID = sessionStorage.getItem("id");
+            //var userID = "nyny";
+
+        // arr_qstans.push(2);
+
+        if (arr_userchoice==(arr_qstans[0])) {
+        $('#selecter_incorOrcor').attr('data-target', '#ModalCorrect');
+        }
+        else {
+        $('#selecter_incorOrcor').attr('data-target', '#ModalIncorrect');
+        }
+
+        //퀘스트 성공 전 레벨 구하기
+        $.ajax({
+            type: "POST",
+            url: "http://13.125.138.168:8080/gungduk/api/v1/finishQuest?id="+userID,
+            success: function(data){
+                nowLevel = data.level;
+            }
+        })
+
+        }
+
+        function compare2(){
+        var userID = sessionStorage.getItem("id");
+        //var userID = "nyny";
+        var changeLevel;
+        
+        //퀘스트 성공후 레벨 비교
+        $.ajax ({
+
+            url: 'http://13.125.138.168:8080/gungduk/api/v1/finishQuest?id='+userID+'&qstName='+arr_qstname[0],
+            async: false,
+            type: 'POST',
+
+            success: function(data) {
+                changeLevel = data.level;
+            }, error: function(err) {
+                    console.log(err.responseText);
+                }
+        })
+        if (nowLevel != changeLevel) {
+            //alert("different "+nowLevel+", " + changeLevel);
+            if(changeLevel == 2){
+                var imgURL = "img/ic-level-labor@2x.png";
+                var imgURL2 = "img/ic-level-civilian@2x.png"
+                $(".img1").attr("src", imgURL);
+                $(".img2").attr("src", imgURL2);
+                $("#con1").text(" 노비에서 평민으로");
+                $("#con2").text(" 진급하셨습니다.");
+            } else if(changeLevel == 3){
+                var imgURL = "img/ic-level-civilian@2x.png";
+                var imgURL2 = "img/ic-level-general@2x.png"
+                $(".img1").attr("src", imgURL);
+                $(".img2").attr("src", imgURL2);
+                $("#con1").text(" 평민에서 관리로");
+                $("#con2").text(" 진급하셨습니다.");
+            } else if(changeLevel == 4){
+                var imgURL = "img/ic-level-general@2x.png";
+                var imgURL2 = "img/ic-level-gentleman@2x.png"
+                $(".img1").attr("src", imgURL);
+                $(".img2").attr("src", imgURL2);
+                $("#con1").text(" 관리에서 양반으로");
+                $("#con2").text(" 진급하셨습니다.");
+            } else if(changeLevel == 5){
+                var imgURL = "img/ic-level-gentleman@2x.png";
+                var imgURL2 = "img/ic-level-king@2x.png"
+                $(".img1").attr("src", imgURL);
+                $(".img2").attr("src", imgURL2);
+                $("#con1").text(" 양반에서 왕으로");
+                $("#con2").text(" 진급하셨습니다.");
+            }
+            $('#btn_success').attr('data-target', '#ModalLevelUp');
+        } else {
+            //alert("same "+nowLevel+", " + changeLevel);
+            $('#btn_success').removeAttr('data-target');
+            $('.fade.show').modal('hide');
+        }
+        
+        }
+        function sendQst() {
+        var userID = sessionStorage.getItem("id");
+        //var userID = "nyny";
+
+        $.ajax ({
+
+        url: 'http://13.125.138.168:8080/gungduk/api/v1/finishQuest?id='+userID+'&qstName='+arr_qstname[0],
+        type: 'POST',
+
+        success: function(data) {
+            $('.fade.show').modal('hide');
+        }, error: function(err) {
+                    console.log(err.responseText);
+                }
+        })
+        }
+
+        function sendquitQst() {
+        var userID = sessionStorage.getItem("id");
+        //var userID = "nyny";
+
+        $.ajax ({
+
+        url: 'http://13.125.138.168:8080/gungduk/api/v1/quitQuest?id='+userID+'&qstName='+arr_qstname[0],
+        type: 'GET',
+
+        success: function(data) {
+            $('#ModalPopup').modal('hide');
+        }, error: function(err) {
+                console.log(err.responseText);
+            }
+        })
+        }
+
+        // 실패
+        function fail(err){
+        switch (err.code){
+        case err.PERMISSION_DENIED:
+        msg = "사용자 거부";
+        break;
+                 
+        case err.PERMISSION_UNAVAILABLE:
+        msg = "지리정보를 얻을 수 없음";
+        break;
+                 
+        case err.TIMEOUT:
+        msg = "시간초과";
+        break;
+                 
+        case err.UNKNOWN_ERROR:
+        msg = "알 수 없는 오류 발생";
+        break;
+        }
+        log(msg);
+        }
+
+        function log(msg){
+        var console = document.getElementById("console");
+        console.innerHTML += msg + "<br/>";
+        }
+   </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" id="html_forgotIDPW">
+<head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style type="text/css">
+        input{
+            width: 92.5vw;
+            height: 2.85vh;
+            border: none;
+        }
+        input::placeholder{
+            font-family: AppleSDGothicNeo;
+            font-size: 2.1vh;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.14;
+            letter-spacing: normal;
+            color: #e4e4e4;
+        }
+    </style>
+    <title>forgotIDPW</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <a href="javascript:history.back();">
+                <img src="img/ic-back@2x.png"
+                    layout="responsive"
+                    class="ic_back">
+            </a>
+            <span class="header_title">아이디/비밀번호 찾기</span>
+        </div>
+
+        <!--navigation(tab)-->
+        <div class="navigation">
+            <ul class="tabs">
+                <li class="tab-link current" data-tab="tab-1">아이디 찾기</li>
+                <li class="tab-link" data-tab="tab-2">비밀번호 찾기</li>
+            </ul>
+            <div class="navigationLine"></div>
+        </div>
+
+        <!--content-->
+        <div class="content_forgotIDPW">
+            <!-- id 찾기 tab -->
+            <div id="tab-1" class="tab-content current">
+                <div class="rec1_forgotIDPW">
+                    <div class="rec_form_forgotIDPW" id="resultID_forgotIDPW">
+                        <label for="inputPhoneNum_forgotIDPW" class="title_form">핸드폰 번호</label>
+                        <div class="box_form">
+                            <input id="inputPhoneNum_forgotIDPW" type="number" name="phoneNum" placeholder="'-'를 제외한 핸드폰 번호를 입력하세요." required>
+                        </div>
+                        <div class="line_form" id="line_phoneNum_form"></div>
+                        <div class="alert_form" id="alert_phoneNum_form"></div>
+                    </div>
+                </div>
+                <div class="rec2_btn_forgotIDPW" id="rec2_btn_findID">
+                    <div class="btn_form">
+                        <span class="btn_text_form" id="findID_forgotIDPW">ID 찾기</span>
+                    </div>
+                </div>
+                <a href="00_1_login.html"><div class="rec3_btn_forgotIDPW"></div></a>
+            </div>
+            <!-- 비밀번호 찾기 tab -->
+            <div id="tab-2" class="tab-content">
+                <div class="rec3_forgotIDPW">
+                    <div class="rec_form_forgotIDPW" id="resultPW_forgotIDPW">
+                        <label for="inputID_forgotIDPW" class="title_form">ID</label>
+                        <div class="box_form">
+                            <input id="inputID_forgotIDPW" type="text" name="id" placeholder="아이디를 입력하세요." required>
+                        </div>
+                        <div class="line_form" id="line_id_form"></div>
+                        <div class="alert_form" id="alert_id_form"></div>
+                    </div>
+                </div>
+                <div class="rec4_btn_forgotIDPW" id="rec4_btn_findPW">
+                    <div class="btn_form">
+                        <span class="btn_text_form" id="findPW_forgotIDPW">비밀번호 찾기</span>
+                    </div>
+                </div>
+                <a href="00_1_login.html"><div class="rec5_btn_forgotIDPW"></div></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function(){
+            $('ul.tabs li').click(function(){
+                var tab_id = $(this).attr('data-tab');
+            
+                $('ul.tabs li').removeClass('current');
+                $('.tab-content').removeClass('current');
+            
+                $(this).addClass('current');
+                $("#"+tab_id).addClass('current');
+            });
+
+            //아이디 찾기
+            $("#rec2_btn_findID").click(function(){
+                var phoneNum = "phoneNum=" + $("#inputPhoneNum_forgotIDPW").val();
+
+                if($("#inputPhoneNum_forgotIDPW").val()==""){
+                    $('#alert_phoneNum_form').text("핸드폰 번호를 입력하세요.");
+                    if($("#inputPhoneNum_forgotIDPW").keydown(function(){
+                        $('#alert_phoneNum_form').empty();
+                    }));
+                    return false;
+                }
+                $.ajax({
+                    type:'POST',
+                    url:'http://13.125.138.168:8080/gungduk/api/v1/searchId',
+                    data: phoneNum,
+                    async:false,
+                    success:function(data){
+                        if(data=="error")
+                            $('#alert_phoneNum_form').text("존재하지 않는 번호입니다.");
+                        else{
+                            $("#resultID_forgotIDPW").remove();
+                            $(".rec1_forgotIDPW").css({
+                                'font-family': 'AppleSDGothicNeo',
+                                'font-size': '2.1875vh',
+                                'font-weight': 'normal',
+                                'font-style': 'normal',
+                                'font-stretch': 'normal',
+                                'line-height': '1.43',
+                                'letter-spacing': 'normal',
+                                'text-align': 'center',
+                                'color': '#36797b',
+                                'font-weight': 'bold'
+                            });
+                            $(".rec1_forgotIDPW").append("<span style='line-height: 10vh;'>아이디는 " + data +" 입니다.</span>");
+                            $("#rec2_btn_findID").remove();
+                            $(".rec3_btn_forgotIDPW").css({
+                                'width': '92.5vw',
+                                'height': '7.85vh',
+                                'border-radius': '8px',
+                                'background-color': '#5f9ea0',
+                                'margin-left': '3.75vw',
+                                'text-align': 'center'
+                            });
+                            $(".rec3_btn_forgotIDPW").append("<span style='height: 7.85vh;font-size: 0.875em;font-weight: bold;font-style: normal;font-stretch: normal;letter-spacing: -0.5px;color: #ffffff;line-height: 7.85vh;'>확인</span>");
+                        }
+                        
+                    },
+                    error:function(request,error){ 
+                        console.log(error.responseText);
+                        console.log(request.responseText);
+                    }
+                });
+            });
+
+            //비번 찾기
+            $("#rec4_btn_findPW").click(function(){
+                var userID = "id=" + $("#inputID_forgotIDPW").val();
+            
+                $.ajax({
+                    type:'POST',
+                    url:'http://13.125.138.168:8080/gungduk/api/v1/searchPw',
+                    data:userID, 
+                    //dataType:"JSON",
+                    async:false,
+                    success:function(data){
+                        if($("#inputID_forgotIDPW").val()==""){
+                            $('#alert_id_form').text("ID를 입력하세요.");
+                            if($("#inputID_forgotIDPW").keydown(function(){
+                                $('#alert_id_form').empty();
+                            }));
+                        } else {
+                            if (data == "error"){
+                                $('#alert_id_form').text("존재하지 않는 ID입니다.");
+                                if($("#inputID_forgotIDPW").keydown(function(){
+                                    $('#alert_id_form').empty();
+                                }));
+                            } else {
+                                $("#resultPW_forgotIDPW").remove();
+                                $(".rec3_forgotIDPW").css({
+                                    'font-family': 'AppleSDGothicNeo',
+                                    'font-size': '2.1875vh',
+                                    'font-weight': 'normal',
+                                    'font-style': 'normal',
+                                    'font-stretch': 'normal',
+                                    'line-height': '1.43',
+                                    'letter-spacing': 'normal',
+                                    'text-align': 'center',
+                                    'color': '#36797b',
+                                    'font-weight': 'bold'
+                                });
+                                $(".rec3_forgotIDPW").append("<span>임시 비밀번호는 " + data +" 입니다.</span>");
+                                $("#rec4_btn_findPW").remove();
+                                $(".rec5_btn_forgotIDPW").css({
+                                    'width': '92.5vw',
+                                    'height': '7.85vh',
+                                    'border-radius': '8px',
+                                    'background-color': '#5f9ea0',
+                                    'margin-left': '3.75vw',
+                                    'text-align': 'center'
+                                });
+                                $(".rec5_btn_forgotIDPW").append("<span style='height: 7.85vh;font-size: 0.875em;font-weight: bold;font-style: normal;font-stretch: normal;letter-spacing: -0.5px;color: #ffffff;line-height: 7.85vh;'>확인</span>");
+                            }
+                        }
+                    },
+                    error:function(request, error){ 
+                        console.log(error.responseText);
+                        console.log(request.responseText);
+                    }
+                });
+            });	
+        });
+    </script>
+</body>
+</html>

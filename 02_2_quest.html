@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <title>quest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script>
+        function View(){
+            document.getElementById("body").style.overflow="hidden";
+            document.getElementById("levelLayout").style.display='inline';
+
+        }
+        function Close(){
+            document.getElementById("body").style.overflow="auto";
+            document.getElementById("levelLayout").style.display='none';
+        }
+    </script>
+</head>
+<body id="body">
+<div class="wrapper" style="position: absolute;">
+    <div class = "header">
+        <a href="02_mypage.html">
+            <img src="img/ic-back@2x.png" layout="responsive"
+                class="ic_back">
+        </a>
+        <span class="header_title">퀘스트 완료 목록</span>
+    </div>
+    <div class="content">
+        <div class="current_status">
+            <div class="img_current_status">
+                <img class="ic_level">
+                <a href="javascript:View();"><img src="img/ic-help@2x.png" class="ic_help"></a>
+            </div>
+            <div class="name_current_status"></div>
+            <div class="points_current_status"></div>
+            <div class="bar_current_status">
+                <div class="done_current_status"></div>
+            </div>
+        </div>
+        <div class="rec1_quest">
+            <!-- 경복궁 -->
+            <div class="rec1_g_quest">
+                <span class="recG_text" >경복궁</span>
+                <span class="recG_bar"></span>
+                <a href="02_2_1_qCheckListG.html">
+                    <img src="img/img-gyeongbok@2x.png"
+                        class="img_gyeongbok">
+                </a>
+            </div>
+            <!-- 창경궁 -->
+            <div class="rec1_chag_quest">
+                <span class="recG_text" >창경궁</span>
+                <span class="recG_bar"></span>
+                <a href="02_2_1_qCheckListCha.html">
+                    <img src="img/img-changgyeong@2x.png"
+                        class="img_changgyeong">
+                </a>
+            </div><br>
+            <!-- 덕수궁 -->
+            <div class="rec1_d_quest">
+                <span class="recG_text" >덕수궁</span>
+                <span class="recG_bar"></span>
+                <a href="02_2_1_qCheckListD.html">
+                    <img src="img/img-deoksu@2x.png"
+                        class="img_deoksu">
+                </a>
+            </div>
+            <!-- 창덕궁 -->
+            <div class="rec1_chad_quest">
+                <span class="recG_text" >창덕궁</span>
+                <span class="recG_bar"></span>
+                <a href="02_2_1_qCheckListCdg.html">
+                    <img src="img/img-changdeok@2x.png"
+                        class="img_changdeok">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 상세 설명 popup -->
+<div id="levelLayout">
+    <div class="wrapper_popUp">
+        <div class="content_popUp">
+            <div class="header_popUp">
+                <span class="header_title">계급</span>
+                <a href="02_2_quest.html">
+                    <img src="img/ic-clear@2x.png"
+                            class="ic_clear">
+                </a>
+            </div>
+            <div class="result_popUp">
+                <!-- king div -->
+                <div class="rec1_mainLevel">
+                    <div class="rec1_current5_mainLevel"></div>
+                    <div class="rec1_level_mainLevel">
+                        <img src="img/ic-level-king@2x.png"
+                                class="ic_level_king">
+                    </div>
+                    <div class="rec1_infoBox_mainLevel">
+                        <div class="rec1_info1_mainLevel">1계층</div>
+                        <div class="rec1_info2_mainLevel">왕</div>
+                    </div>
+                </div>
+                <!-- gentleman div -->
+                <div class="rec1_mainLevel">
+                    <div class="rec1_current4_mainLevel"></div>
+                    <div class="rec1_level_mainLevel">
+                        <img src="img/ic-level-gentleman@2x.png"
+                            class="ic_level_gentleman">
+                    </div>
+                    <div class="rec1_infoBox_mainLevel">
+                        <div class="rec1_info1_mainLevel">2계층</div>
+                        <div class="rec1_info2_mainLevel">양반</div>
+                    </div>
+                </div>
+                <!-- general div -->
+                <div class="rec1_mainLevel">
+                    <div class="rec1_current3_mainLevel"></div>
+                    <div class="rec1_level_mainLevel">
+                        <img src="img/ic-level-general@2x.png"
+                                class="ic_level_general">
+                    </div>
+                    <div class="rec1_infoBox_mainLevel">
+                        <div class="rec1_info1_mainLevel">3계층</div>
+                        <div class="rec1_info2_mainLevel">관리</div>
+                    </div>
+                </div>
+                <!-- civilian div -->
+                <div class="rec1_mainLevel">
+                    <div class="rec1_current2_mainLevel"></div>
+                    <div class="rec1_level_mainLevel">
+                        <img src="img/ic-level-civilian@2x.png"
+                                class="ic_level_civilian">
+                    </div>
+                    <div class="rec1_infoBox_mainLevel">
+                        <div class="rec1_info1_mainLevel">4계층</div>
+                        <div class="rec1_info2_mainLevel">평민</div>
+                    </div>
+                </div>
+                <!-- labor div -->
+                <div class="rec1_mainLevel">
+                    <div class="rec1_current1_mainLevel"></div>
+                    <div class="rec1_level_mainLevel">
+                        <img src="img/ic-level-labor@2x.png"
+                            class="ic_level_labor">
+                    </div>
+                    <div class="rec1_infoBox_mainLevel">
+                        <div class="rec1_info1_mainLevel">5계층</div>
+                        <div class="rec1_info2_mainLevel">노비</div>
+                    </div>
+                </div>
+            </div>
+            <a href="02_2_quest.html">
+                <div class="btn_popUp">
+                    <span class="btn_popUp_text">확인</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+//달성율 표시 위해 사용자 id 받아오기
+$(function(){
+    var userID = "id="+ sessionStorage.getItem("id");
+    
+    $.ajax({
+    type: "POST",
+    url: "http://13.125.138.168:8080/gungduk/api/v1/finishQuest",
+    data: userID,
+    async: false,
+    success: function(data){
+        //계급 이름, 사진 변경과 퍼센테이지 변경
+        if ( data.level == 1 ){
+            $(".ic_level").attr('src','img/ic-level-labor@2x.png');
+            $(".name_current_status").text("노비");
+            $(".points_current_status").text(data.percent + "%");
+            $(".done_current_status").css({
+                'width': data.percent + "%"
+            });
+        } else if ( data.level == 2 ){
+            $(".ic_level").attr('src','img/ic-level-civilian@2x.png');
+            $(".name_current_status").text("평민");
+            $(".points_current_status").text(data.percent + "%");
+            $(".done_current_status").css({
+                'width': data.percent + "%"
+            });
+        } else if ( data.level == 3 ){
+            $(".ic_level").attr('src','img/ic-level-general@2x.png');
+            $(".name_current_status").text("관리");
+            $(".points_current_status").text(data.percent + "%");
+            $(".done_current_status").css({
+                'width': data.percent + "%"
+            });
+        } else if ( data.level == 4 ){
+            $(".ic_level").attr('src','img/ic-level-gentleman@2x.png');
+            $(".name_current_status").text("양반");
+            $(".points_current_status").text(data.percent + "%");
+            $(".done_current_status").css({
+                'width': data.percent + "%"
+            });
+        } else if ( data.level == 5 ){
+            $(".ic_level").attr('src','img/ic-level-king@2x.png');
+            $(".name_current_status").text("왕");
+            $(".points_current_status").text(data.percent + "%");
+            $(".done_current_status").css({
+                'width': data.percent + "%"
+            });
+        }
+        //계급 이름, 사진 변경과 퍼센테이지 변경
+        if ( data.level == 1 ){
+            $(".rec1_current1_mainLevel").append("<img src='img/indicator-box@2x.png' class='indicator_box'><div class='rec1_indicatorNm_mainLevel'>현재 계급</div>");
+        } else if ( data.level == 2 ){
+            $(".rec1_current2_mainLevel").append("<img src='img/indicator-box@2x.png' class='indicator_box'><div class='rec1_indicatorNm_mainLevel'>현재 계급</div>");
+        } else if ( data.level == 3 ){
+            $(".rec1_current3_mainLevel").append("<img src='img/indicator-box@2x.png' class='indicator_box'><div class='rec1_indicatorNm_mainLevel'>현재 계급</div>");
+        } else if ( data.level == 4 ){
+            $(".rec1_current4_mainLevel").append("<img src='img/indicator-box@2x.png' class='indicator_box'><div class='rec1_indicatorNm_mainLevel'>현재 계급</div>");
+        } else if ( data.level == 5 ){
+            $(".rec1_current5_mainLevel").append("<img src='img/indicator-box@2x.png' class='indicator_box'><div class='rec1_indicatorNm_mainLevel'>현재 계급</div>");
+        } 
+    }});
+    })
+</script>
+</body>
+</html>
